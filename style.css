@@ -1,0 +1,102 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  padding: 10px 15px;
+  border-bottom: 1px solid #c7c7c7;
+  -webkit-box-shadow: 1px 1px 5px #c7c7c7;
+          box-shadow: 1px 1px 5px #c7c7c7;
+}
+
+header img {
+  width: 15%;
+  height: 15%;
+}
+
+header #nav1 .navbar-toggler {
+  border: none;
+  padding: 0;
+}
+
+header #nav1 .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+header #nav1 .navbar-toggler-icon {
+  background-image: url("assets/bars-solid-full.svg");
+}
+
+header #nav1 .search {
+  border: 1px solid black;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header #nav1 .search:active {
+  border: none;
+  background-image: url("assets/gold.jpg");
+  background-size: cover;
+  color: white;
+}
+
+header #nav1 .search_bar:focus {
+  border: 2px solid #8d8d8d;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+header #nav2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #heroSection {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(95, 95, 95, 0.644)), to(rgba(0, 0, 0, 0.712))), url("assets/heroBackground1.jpg");
+  background: linear-gradient(rgba(95, 95, 95, 0.644), rgba(0, 0, 0, 0.712)), url("assets/heroBackground1.jpg");
+  background-size: cover;
+  height: 350px;
+  color: white;
+}
+
+/*
+الاسبوع القادم كامل
+7
+8:30
+مواعيد الصلاة
+
+*/
+/*# sourceMappingURL=style.css.map */

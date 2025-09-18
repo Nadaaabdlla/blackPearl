@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgb(199, 199, 199);
+  box-shadow: 1px 1px 5px rgb(199, 199, 199);
+  img {
+    width: 15%;
+    height: 15%;
+  }
+  #nav1 {
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+    }
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+    .navbar-toggler-icon {
+      background-image: url("assets/bars-solid-full.svg");
+    }
+    .search {
+      border: 1px solid rgb(0, 0, 0);
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+    .search:active {
+      border: none;
+      background-image: url("assets/gold.jpg");
+      background-size: cover;
+      color: white;
+    }
+    .search_bar:focus{
+        border: 2px solid rgb(141, 141, 141);
+        box-shadow:none;
+
+    }
+  }
+  #nav2 {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+  }
+}
+main{
+    #heroSection{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(rgba(95, 95, 95, 0.644),rgba(0, 0, 0, 0.712)), url("assets/heroBackground1.jpg");
+        background-size: cover;
+        height: 350px;
+        color: white;
+    }
+}
+
+/*
+الاسبوع القادم كامل
+7
+8:30
+مواعيد الصلاة
+
+*/
