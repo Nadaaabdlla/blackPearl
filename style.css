@@ -42,8 +42,8 @@ header #nav1 .navbar-toggler-icon {
 header #nav1 .search {
   border: 1px solid black;
   border-radius: 10px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
 }
 
 header #nav1 .search:active {
