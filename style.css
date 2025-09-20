@@ -122,6 +122,26 @@ main #categoryContainer .btn-group .active {
 
 main #categoryContainer .card {
   position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+main #categoryContainer .card .offerBanner {
+  color: black;
+  font-weight: 700;
+  -webkit-box-shadow: 1px 1px 10px black;
+          box-shadow: 1px 1px 10px black;
+  background: url("assets/gold.jpg");
+  background-size: cover;
+  height: 50px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  position: absolute;
+  top: 20px;
+  left: -50px;
 }
 
 main #categoryContainer .card .card-body {
@@ -144,16 +164,8 @@ main #categoryContainer .card .cardBtns {
 
 main #categoryContainer .card .cardBtns .heartBtn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.gold {
-  background-color: gold;
-}
-
-.black {
-  background-color: black;
+  top: 15px;
+  right: 15px;
 }
 
 /*
