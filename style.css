@@ -92,6 +92,34 @@ main #heroSection {
   color: white;
 }
 
+main #categoryContainer {
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+main #categoryContainer .btn-group .btn {
+  margin: 5px;
+  border-radius: 0;
+}
+
+main #categoryContainer .btn-group .active {
+  color: #e2c20f;
+  border: none;
+  border-bottom: 1px solid #ffd900;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 /*
 الاسبوع القادم كامل
 7

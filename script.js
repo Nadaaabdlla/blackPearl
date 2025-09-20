@@ -2,16 +2,29 @@ const heartBtn = document.getElementById("heartBtn");
 const heartIcon = heartBtn.querySelector("i");
 
 heartBtn.addEventListener("click", () => {
-    heartIcon.classList.toggle("fa-regular");
-    heartIcon.classList.toggle("fa-solid");
+  heartIcon.classList.toggle("fa-regular");
+  heartIcon.classList.toggle("fa-solid");
 });
-  const cartBtn = document.getElementById("cartBtn");
-  const cartIcon = cartBtn.querySelector("span");
+const cartBtn = document.getElementById("cartBtn");
+const cartIcon = cartBtn.querySelector("span");
 
-  cartBtn.addEventListener("click", () => {
-    if (cartIcon.textContent.trim() === "add_shopping_cart") {
-      cartIcon.textContent = "remove_shopping_cart";
-    } else {
-      cartIcon.textContent = "add_shopping_cart";
-    }
+cartBtn.addEventListener("click", () => {
+  if (cartIcon.textContent.trim() === "add_shopping_cart") {
+    cartIcon.textContent = "remove_shopping_cart";
+  } else {
+    cartIcon.textContent = "add_shopping_cart";
+  }
+});
+
+const btnGroup = document.querySelector(".btn-group");
+const btns = btnGroup.querySelectorAll(".btn");
+
+btns.forEach(button => {
+  button.addEventListener("click", () => {
+    btns.forEach(button => {
+    button.classList.remove("active");
   });
+    button.classList.toggle("active");
+  });
+});
+

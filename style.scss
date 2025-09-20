@@ -61,6 +61,28 @@ main{
         height: 350px;
         color: white;
     }
+    #categoryContainer{
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      .btn-group {
+        .btn{
+          margin: 5px;
+          border-radius:0;
+        }
+        .active{
+          // background-color: rgba(226, 226, 226, 0.527);
+          color: rgb(226, 194, 15);
+          border: none;
+          border-bottom: 1px solid rgb(255, 217, 0);
+          transition: all 0.3s;
+
+        }
+      }
+
+    }
 }
 
 /*
