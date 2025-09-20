@@ -120,6 +120,42 @@ main #categoryContainer .btn-group .active {
   transition: all 0.3s;
 }
 
+main #categoryContainer .card {
+  position: relative;
+}
+
+main #categoryContainer .card .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+
+main #categoryContainer .card .card-body p {
+  font-weight: 700;
+}
+
+main #categoryContainer .card .cardBtns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+main #categoryContainer .card .cardBtns .heartBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.gold {
+  background-color: gold;
+}
+
+.black {
+  background-color: black;
+}
+
 /*
 الاسبوع القادم كامل
 7
