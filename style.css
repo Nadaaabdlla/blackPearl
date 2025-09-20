@@ -124,10 +124,16 @@ main #categoryContainer .card {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
+  border: 1px solid #cecdcd;
+}
+
+main #categoryContainer .card .card-img-top {
+  border-radius: 20px 20px 0 0;
 }
 
 main #categoryContainer .card .offerBanner {
-  color: black;
+  color: #504e4e;
+  font-size: larger;
   font-weight: 700;
   -webkit-box-shadow: 1px 1px 10px black;
           box-shadow: 1px 1px 10px black;

@@ -83,13 +83,18 @@ main {
     .card {
       position: relative;
       overflow: hidden;
-border-radius: 20px;
+      border-radius: 20px;
+      border: 1px solid rgb(206, 205, 205);
+
+      .card-img-top {
+        border-radius: 20px 20px 0 0;
+      }
       .offerBanner {
-        color: black;
+        color: rgb(80, 78, 78);
+        font-size: larger;
         font-weight: 700;
         box-shadow: 1px 1px 10px rgb(0, 0, 0);
-        background:
-          url("assets/gold.jpg");
+        background: url("assets/gold.jpg");
         background-size: cover;
         height: 50px;
         transform: rotate(-45deg);
