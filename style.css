@@ -123,12 +123,24 @@ main #categoryContainer .btn-group .active {
 main #categoryContainer .card {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid #cecdcd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main #categoryContainer .card .card-img-top {
-  border-radius: 20px 20px 0 0;
+  border-radius: 9px 9px 0 0;
+  height: 10rem;
+  width: 18rem;
 }
 
 main #categoryContainer .card .offerBanner {
@@ -157,7 +169,8 @@ main #categoryContainer .card .card-body {
   gap: 15px;
 }
 
-main #categoryContainer .card .card-body p {
+main #categoryContainer .card .card-body h4 {
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
@@ -170,7 +183,7 @@ main #categoryContainer .card .cardBtns {
 
 main #categoryContainer .card .cardBtns .heartBtn {
   position: absolute;
-  top: 15px;
+  top: 20px;
   right: 15px;
 }
 
