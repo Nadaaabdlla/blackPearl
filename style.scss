@@ -46,6 +46,26 @@ header {
     list-style: none;
     gap: 20px;
     align-items: center;
+    #cartBtn{
+      position: relative;
+      a{
+        color: black;
+      }
+      #cart-count{
+        position: absolute;
+        top: -12px;
+        right: -10px;
+        background-color: orangered;
+        color: white;
+        border: 1px solid orangered;
+        border-radius: 50%;
+        // padding: 3px;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        font-size: small;
+      }
+    }
   }
 }
 main {
@@ -67,10 +87,54 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    .category-slider {
+      display: flex;
+      align-items: center;
+      position: relative;
+      gap: 5px;
+      max-width: 100%;
+    }
+    
+    .categories {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-behavior: smooth; /* حركة ناعمة */
+      -webkit-overflow-scrolling: touch;
+      gap: 10px;
+      flex: 1;
+    }
+    
+    .categories::-webkit-scrollbar {
+      display: none; /* نخفي الاسكرول */
+    }
+    
+    .categories .btn {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+    
+    .arrow {
+      border: none;
+      background: none;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 15px;
+    }
+    #leftBtn{
+      display: none;
+    }
     .btn-group {
+        display: flex;
+        flex-wrap: nowrap; /* يخليهم صف واحد */
+        overflow-x: auto;  /* يخلي في Scroll أفقي */
+        -webkit-overflow-scrolling: touch; /* يخلي السحب باللمس ناعم */
+        gap: 10px; /* مسافة صغيرة بين الأزرار */
+        padding-bottom: 5px; /* عشان يظهر الـ scroll تحت */
       .btn {
         margin: 5px;
         border-radius: 0;
+        flex: 0 0 auto;
       }
       .active {
         // background-color: rgba(226, 226, 226, 0.527);
@@ -99,19 +163,19 @@ main {
       }
       .offerBanner {
         color: rgb(80, 78, 78);
-        font-size: larger;
+        font-size: large;
+        text-align: center;
         font-weight: 700;
-        box-shadow: 1px 1px 10px rgb(0, 0, 0);
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.644);
         background: url("assets/gold.jpg");
         background-size: cover;
         height: 50px;
         transform: rotate(-45deg);
         padding: 10px;
-        text-align: center;
         width: 200px;
         position: absolute;
         top: 20px;
-        left: -50px;
+        left: -52px;
       }
       .card-body {
         display: flex;

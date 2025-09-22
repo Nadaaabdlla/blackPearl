@@ -36,20 +36,21 @@
                                 <a class="nav-link active" aria-current="page" href="#heroSection">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="#">categories</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    Dropdown
+                                    Contact us
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Facebook</a></li>
+                                    <li><a class="dropdown-item" href="#">Instagram</a></li>
+                                    <li><a class="dropdown-item" href="#">WhatsApp</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a class="dropdown-item" href="#">Our WhatsApp group</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -65,7 +66,8 @@
         <img src="assets/icon_logo.png" alt="">
         <nav id="nav2">
             <li id="cartBtn">
-                <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                <a href="cartItems.html"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
+                <span id="cart-count">0</span>
             </li>
             <li class="heartBtn">
                 <i class="fa-regular fa-heart fa-xl"></i>
@@ -78,16 +80,34 @@
             <h2>Shine as you should</h2>
         </section>
         <section id="categoryContainer">
-            <h2>Our category</h2>
-            <div class="btn-group">
+            <h2>Our categories</h2>
+            <!-- <div class="btn-group">
                 <a href="#" class="btn active">All</a>
                 <a href="#" class="btn">Necklace</a>
                 <a href="#" class="btn">Ring</a>
                 <a href="#" class="btn">Medallion</a>
-            </div>
+                <a href="#" class="btn">Necklace</a>
+                <a href="#" class="btn">Ring</a>
+                <a href="#" class="btn">Medallion</a>
+            </div> -->
+            <div class="category-slider">
+                <button class="arrow left" id="leftBtn"><i class="fa-solid fa-chevron-left"></i></button>
+              
+                <div class="btn-group categories">
+                  <a href="#" class="btn active">All</a>
+                  <a href="#" class="btn">Necklace</a>
+                  <a href="#" class="btn">Ring</a>
+                  <a href="#" class="btn">Medallion</a>
+                  <a href="#" class="btn">Bracelet</a>
+                  <a href="#" class="btn">Earrings</a>
+                </div>
+              
+                <button class="arrow right"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+              
             <div class="card necklace">
                 <div class="offerBanner">
-                    50% off
+                   Special offer
                 </div>
                 <img src="assets/ac1.jpg" class="card-img-top" alt="...">
                 <div class="card-body">

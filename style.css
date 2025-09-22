@@ -70,6 +70,28 @@ header #nav2 {
           align-items: center;
 }
 
+header #nav2 #cartBtn {
+  position: relative;
+}
+
+header #nav2 #cartBtn a {
+  color: black;
+}
+
+header #nav2 #cartBtn #cart-count {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  background-color: orangered;
+  color: white;
+  border: 1px solid orangered;
+  border-radius: 50%;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  font-size: small;
+}
+
 main #heroSection {
   padding: 10px;
   display: -webkit-box;
@@ -107,9 +129,81 @@ main #categoryContainer {
   gap: 10px;
 }
 
+main #categoryContainer .category-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  gap: 5px;
+  max-width: 100%;
+}
+
+main #categoryContainer .categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  /* حركة ناعمة */
+  -webkit-overflow-scrolling: touch;
+  gap: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main #categoryContainer .categories::-webkit-scrollbar {
+  display: none;
+  /* نخفي الاسكرول */
+}
+
+main #categoryContainer .categories .btn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+main #categoryContainer .arrow {
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 15px;
+}
+
+main #categoryContainer #leftBtn {
+  display: none;
+}
+
+main #categoryContainer .btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  /* يخليهم صف واحد */
+  overflow-x: auto;
+  /* يخلي في Scroll أفقي */
+  -webkit-overflow-scrolling: touch;
+  /* يخلي السحب باللمس ناعم */
+  gap: 10px;
+  /* مسافة صغيرة بين الأزرار */
+  padding-bottom: 5px;
+  /* عشان يظهر الـ scroll تحت */
+}
+
 main #categoryContainer .btn-group .btn {
   margin: 5px;
   border-radius: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 main #categoryContainer .btn-group .active {
@@ -147,21 +241,21 @@ main #categoryContainer .card .card-img-top {
 
 main #categoryContainer .card .offerBanner {
   color: #504e4e;
-  font-size: larger;
+  font-size: large;
+  text-align: center;
   font-weight: 700;
-  -webkit-box-shadow: 1px 1px 10px black;
-          box-shadow: 1px 1px 10px black;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.644);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.644);
   background: url("assets/gold.jpg");
   background-size: cover;
   height: 50px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   padding: 10px;
-  text-align: center;
   width: 200px;
   position: absolute;
   top: 20px;
-  left: -50px;
+  left: -52px;
 }
 
 main #categoryContainer .card .card-body {
