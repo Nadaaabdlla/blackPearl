@@ -1,5 +1,4 @@
 window.addEventListener("load", () => {
-  // ❤️ زرار الـ heart
   const heartBtns = document.querySelectorAll(".heartBtn");
   heartBtns.forEach(btn => {
     const heartIcon = btn.querySelector("i");
@@ -14,7 +13,6 @@ window.addEventListener("load", () => {
     });
   });
 
-  // 🛒 زرار الكارت
   const cartBtns = document.querySelectorAll(".cartBtn");
   cartBtns.forEach(btn => {
     const cartIcon = btn.querySelector("span");
@@ -27,16 +25,28 @@ window.addEventListener("load", () => {
     });
   });
 
-  // 👇 جروب الأزرار
-  const btnGroup = document.querySelector(".btn-group");
-  
-    const btns = btnGroup.querySelectorAll(".btn");
 
-    btns.forEach(button => {
-      button.addEventListener("click", () => {
-        btns.forEach(b => b.classList.remove("active"));
-        button.classList.add("active");
-      });
+
+  const cards = document.querySelectorAll(".card");
+const btnGroup = document.querySelector(".btn-group");
+const btns = btnGroup.querySelectorAll(".btn");
+
+btns.forEach(button => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault(); 
+    btns.forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
+    const filter = button.innerText.trim().toLowerCase();
+    cards.forEach(card => {
+      if (filter==="all" || card.classList.contains(filter)) {
+        card.classList.remove("hidden"); 
+      } else {
+        card.classList.add("hidden");
+      }
     });
-  
+  });
+});
+
+
+
 });

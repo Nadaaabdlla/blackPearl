@@ -120,14 +120,16 @@ main #categoryContainer .btn-group .active {
   transition: all 0.3s;
 }
 
+main #categoryContainer .hidden {
+  display: none;
+}
+
 main #categoryContainer .card {
+  width: 18rem;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   border: 1px solid #cecdcd;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -179,6 +181,9 @@ main #categoryContainer .card .cardBtns {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 main #categoryContainer .card .cardBtns .heartBtn {
