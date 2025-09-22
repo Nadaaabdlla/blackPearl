@@ -34,7 +34,7 @@
   </style>
 </head>
 <body>
-    <header>
+      <header>
         <nav id="nav1" class="navbar" style="padding: 0;width: 71px;">
             <div class="container-fluid" style="padding: 0;">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -96,19 +96,19 @@
             </li>
             <a href="heartItems.html">
                 <li class="mainHeartBtn">
-                    <i class="fa-regular fa-heart fa-xl" style="color: black;"></i>
+                    <i class="fa-solid fa-heart fa-xl"  style="color: rgb(255, 73, 73);"></i>
                 </li>
             </a>
         </nav>
     </header>
     <main>
-        <h1>Your Cart</h1>
+        <h1>Your favorites</h1>
         <ul id="cart-list"></ul>
-        <button id="clear-cart">Clear Cart</button>      
+        <button id="clear-cart">Clear</button>      
     </main>
   <script>
     // استرجاع المنتجات
-    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    let cartItems = JSON.parse(localStorage.getItem("wishlist")) || [];
 
     const cartList = document.getElementById("cart-list");
     const clearBtn = document.getElementById("clear-cart");
@@ -122,7 +122,7 @@
 
     // زرار يمسح السلة كلها
     clearBtn.addEventListener("click", () => {
-      localStorage.removeItem("cartItems"); // يمسح من التخزين
+      localStorage.removeItem("wishlist"); // يمسح من التخزين
       cartList.innerHTML = ""; // يمسح من الصفحة
       alert("Cart cleared!");
     });

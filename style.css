@@ -92,26 +92,132 @@ header #nav2 #cartBtn #cart-count {
   font-size: small;
 }
 
+main {
+  padding-bottom: 20px;
+  /* slider structure */
+  /* كل سلايد ياخد عرض الشاشة */
+  /* محتوى داخل السلايد */
+  /* أسهم */
+  /* indicators */
+  /* عند الهامش الصغير خلي نصوص أصغر */
+}
+
 main #heroSection {
-  padding: 10px;
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  /* اضبطي الارتفاع حسب اللي تحبيه */
+  overflow: hidden;
+}
+
+main .slider-window {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+main .slider-track {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
+  will-change: transform;
+}
+
+main .hero-slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(95, 95, 95, 0.644)), to(rgba(0, 0, 0, 0.712))), url("assets/heroBackground1.jpg");
-  background: linear-gradient(rgba(95, 95, 95, 0.644), rgba(0, 0, 0, 0.712)), url("assets/heroBackground1.jpg");
-  background-size: cover;
-  height: 350px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .hero-content {
   color: white;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+main .hero-arrow {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .hero-arrow.prev {
+  left: 12px;
+}
+
+main .hero-arrow.next {
+  right: 12px;
+}
+
+main .indicators {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+main .indicators .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+}
+
+main .indicators .dot.active {
+  background: white;
+}
+
+@media (max-width: 600px) {
+  main #heroSection {
+    height: 50vh;
+  }
+  main .hero-content h1 {
+    font-size: 1.4rem;
+  }
+  main .hero-content h2 {
+    font-size: 1rem;
+  }
 }
 
 main #categoryContainer {
@@ -284,6 +390,25 @@ main #categoryContainer .card .cardBtns .heartBtn {
   position: absolute;
   top: 20px;
   right: 15px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #dfdddd;
+  height: 100px;
+  padding: 20px;
 }
 
 /*

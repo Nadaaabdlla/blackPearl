@@ -44,13 +44,21 @@
                                     Contact us
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Facebook</a></li>
-                                    <li><a class="dropdown-item" href="#">Instagram</a></li>
-                                    <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                                    <li><a class="dropdown-item" target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
+                                        <i class="fa-brands fa-square-facebook" style="padding: 0 5px 0 0;"></i>Facebook
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="https://www.instagram.com/blackpearl_store04/">
+                                        <i class="fa-brands fa-square-instagram" style="padding: 0 5px 0 0;"></i>Instagram
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="https://wa.me/+2001022379431">
+                                        <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> WhatsApp
+                                    </a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Our WhatsApp group</a></li>
+                                    <li><a class="dropdown-item" href="https://chat.whatsapp.com/DlyfycFpjj0BAe9UJ2607s">
+                                        <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> Our WhatsApp group
+                                    </a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -69,16 +77,50 @@
                 <a href="cartItems.html"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
                 <span id="cart-count">0</span>
             </li>
-            <li class="heartBtn">
-                <i class="fa-regular fa-heart fa-xl"></i>
-            </li>
+            <a href="heartItems.html">
+                <li class="mainHeartBtn">
+                    <i class="fa-solid fa-heart fa-xl"  style="color: rgb(255, 73, 73);"></i>
+                </li>
+            </a>
         </nav>
     </header>
     <main>
         <section id="heroSection">
-            <h1>Welcome to our store</h1>
-            <h2>Shine as you should</h2>
-        </section>
+            <div class="slider-window">
+              <div class="slider-track">
+                <div class="hero-slide" style="background-image: url('assets/heroBackground1.jpg')">
+                  <div class="hero-content">
+                    <h1>Welcome to our store</h1>
+                    <h2>Shine as you should</h2>
+                  </div>
+                </div>
+          
+                <div class="hero-slide" style="background-image: url('assets/ac1.jpg')">
+                  <div class="hero-content">
+                    <h1>Discover New Styles</h1>
+                    <h2>Elegance redefined</h2>
+                  </div>
+                </div>
+          
+                <div class="hero-slide" style="background-image: url('assets/ac2.jpg')">
+                  <div class="hero-content">
+                    <h1>Special Offers</h1>
+                    <h2>Don’t miss out</h2>
+                  </div>
+                </div>
+                <!-- (ممكن تضيفي سلايدات أكتر بنفس الشكل) -->
+              </div>
+            </div>
+          
+            <!-- أسهم -->
+            <button class="hero-arrow prev" aria-label="Prev">‹</button>
+            <button class="hero-arrow next" aria-label="Next">›</button>
+          
+            <!-- الدوتس -->
+            <div class="indicators"></div>
+          </section>
+          
+          
         <section id="categoryContainer">
             <h2>Our categories</h2>
             <!-- <div class="btn-group">
@@ -95,13 +137,22 @@
               
                 <div class="btn-group categories">
                   <a href="#" class="btn active">All</a>
-                  <a href="#" class="btn">Necklace</a>
+                  <a href="#" class="btn">Necklace </a>
                   <a href="#" class="btn">Ring</a>
                   <a href="#" class="btn">Medallion</a>
                   <a href="#" class="btn">Bracelet</a>
-                  <a href="#" class="btn">Earrings</a>
+                  <a href="#" class="btn">earrings</a>
+                  <a href="#" class="btn">embroidery</a>
+                  <a href="#" class="btn">craft</a>
+                  <a href="#" class="btn">crochet</a>
+                  <a href="#" class="btn">plushies</a>
                 </div>
-              
+                <!--  
+                ss rings and bracelets  
+                Hand made necklace bracelets rings
+                bbf, couples
+                string bracelets 
+                other -->
                 <button class="arrow right"><i class="fa-solid fa-chevron-right"></i></button>
               </div>
               
@@ -109,7 +160,7 @@
                 <div class="offerBanner">
                    Special offer
                 </div>
-                <img src="assets/ac1.jpg" class="card-img-top" alt="...">
+                <img src="assets/ac2.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <div class="card-text">
                         <h4 class="card-text">Some quick example text.</h4>
@@ -129,12 +180,11 @@
                 </div>
             </div>
             <div class="card ring">
-                <img src="assets/ac2.jpg" class="card-img-top" alt="...">
+                <img src="assets/ac3.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <div class="card-text">
                         <h4 class="card-text">Some quick example</h4>
-                        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card’s content.</p>  -->
+                        <!-- <p class="card-text">70 egyptian pound</p>  -->
                     </div> 
                         <div class="cardBtns">
                             <div class="cartBtn">
@@ -150,7 +200,27 @@
                 </div>
             </div>
             <div class="card medallion">
-                <img src="assets/ac3.jpg" class="card-img-top" alt="...">
+                <img src="assets/ac1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-text">
+                        <h4 class="card-text">Some quick example text.</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card’s content.</p> 
+                    </div>
+                    <div class="cardBtns">
+                        <div class="cartBtn">
+                            <span class="material-symbols-outlined">
+                                add_shopping_cart
+                            </span>
+                        </div>
+                        <div class="heartBtn">
+                            <i class="fa-regular fa-heart fa-2xl"></i>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="card bracelet">
+                <img src="assets/ac4.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <div class="card-text">
                         <h4 class="card-text">Some quick example text.</h4>
@@ -168,10 +238,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     </main>
+    <footer>
+        <p>&copy;All copyrights reseved to Black Pearl</p>
+        <p> made by Nada Tarek</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 
-</html>
+</html

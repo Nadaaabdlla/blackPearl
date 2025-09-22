@@ -69,18 +69,95 @@ header {
   }
 }
 main {
-  #heroSection {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(rgba(95, 95, 95, 0.644), rgba(0, 0, 0, 0.712)),
-      url("assets/heroBackground1.jpg");
-    background-size: cover;
-    height: 350px;
-    color: white;
-  }
+  padding-bottom:20px ;
+ /* slider structure */
+#heroSection {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* اضبطي الارتفاع حسب اللي تحبيه */
+  overflow: hidden;
+}
+
+.slider-window {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  will-change: transform;
+}
+
+/* كل سلايد ياخد عرض الشاشة */
+.hero-slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* محتوى داخل السلايد */
+.hero-content {
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* أسهم */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-arrow.prev { left: 12px; }
+.hero-arrow.next { right: 12px; }
+
+/* indicators */
+.indicators {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.indicators .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+}
+.indicators .dot.active {
+  background: white;
+}
+
+/* عند الهامش الصغير خلي نصوص أصغر */
+@media (max-width: 600px) {
+  #heroSection { height: 50vh; }
+  .hero-content h1 { font-size: 1.4rem; }
+  .hero-content h2 { font-size: 1rem; }
+}
+
   #categoryContainer {
     padding-top: 20px;
     display: flex;
@@ -197,6 +274,15 @@ main {
       }
     }
   }
+}
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #dfdddd;
+  height: 100px;
+  padding: 20px;
 }
 /*
 الاسبوع القادم كامل
