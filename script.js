@@ -252,4 +252,38 @@ updateMainHeart();
   startAuto();
 })();
 
+// البحث
+const searchInput = document.querySelector(".search_bar");
+const searchForm = document.querySelector("form[role='search']");
+// رسالة not found
+let notFoundMsg = document.createElement("p");
+notFoundMsg.textContent = "Not Found";
+notFoundMsg.style.textAlign = "center";
+notFoundMsg.style.marginTop = "20px";
+notFoundMsg.style.display = "none"; // نخفيها في الأول
+document.querySelector("#categoryContainer").appendChild(notFoundMsg);
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // منع ريفريش الصفحة
+  const query = searchInput.value.trim().toLowerCase();
+  let foundAny = false;
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    if (text.includes(query)) {
+      card.style.display = "block";
+      foundAny = true;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  // لو مالقاش حاجة
+  if (!foundAny) {
+    notFoundMsg.style.display = "block";
+  } else {
+    notFoundMsg.style.display = "none";
+  }
+});
+
 });
