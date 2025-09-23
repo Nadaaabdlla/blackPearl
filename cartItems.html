@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,27 +13,58 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
         </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-  <title>Your Cart</title>
-  <style>
-    main{
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #clear-cart{
-        border: 1px solid rgb(0, 0, 0);
-        border-radius: 10px;
-        transition: all 0.1s;
-        padding: 10px;
-    }
-    #clear-cart:active{
-        background-color: red;
-        color: white;
-        border-color: red;
-    }
-  </style>
+    <!-- <script src="script.js" defer></script> -->
+    <title>Your Cart</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        main {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #btns {
+            display: flex;
+            gap: 10px;
+            width: 90%;
+        }
+
+        #clear-cart,
+        #sendWhatsapp {
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            transition: all 0.1s;
+            padding: 10px;
+            width: 50%;
+        }
+
+        #sendWhatsapp {
+            background-color: rgb(94, 163, 55);
+            color: white;
+        }
+
+        #sendWhatsapp:active {
+            background-color: rgb(39, 82, 14);
+            color: white;
+            border-color: rgb(39, 82, 14);
+        }
+
+        #clear-cart:active {
+            background-color: red;
+            color: white;
+            border-color: red;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <nav id="nav1" class="navbar" style="padding: 0;width: 71px;">
@@ -61,21 +93,27 @@
                                     Contact us
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
-                                        <i class="fa-brands fa-square-facebook" style="padding: 0 5px 0 0;"></i>Facebook
-                                    </a></li>
+                                    <li><a class="dropdown-item" target="_blank"
+                                            href="https://www.facebook.com/profile.php?id=61573152634854">
+                                            <i class="fa-brands fa-square-facebook"
+                                                style="padding: 0 5px 0 0;"></i>Facebook
+                                        </a></li>
                                     <li><a class="dropdown-item" href="https://www.instagram.com/blackpearl_store04/">
-                                        <i class="fa-brands fa-square-instagram" style="padding: 0 5px 0 0;"></i>Instagram
-                                    </a></li>
+                                            <i class="fa-brands fa-square-instagram"
+                                                style="padding: 0 5px 0 0;"></i>Instagram
+                                        </a></li>
                                     <li><a class="dropdown-item" href="https://wa.me/+2001022379431">
-                                        <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> WhatsApp
-                                    </a></li>
+                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i>
+                                            WhatsApp
+                                        </a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="https://chat.whatsapp.com/DlyfycFpjj0BAe9UJ2607s">
-                                        <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> Our WhatsApp group
-                                    </a></li>
+                                    <li><a class="dropdown-item"
+                                            href="https://chat.whatsapp.com/DlyfycFpjj0BAe9UJ2607s">
+                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> Our
+                                            WhatsApp group
+                                        </a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -92,7 +130,7 @@
         <nav id="nav2">
             <li id="cartBtn">
                 <a href="cartItems.html"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
-                <span id="cart-count">0</span>
+                <!-- <span id="cart-count">0</span> -->
             </li>
             <a href="heartItems.html">
                 <li class="mainHeartBtn">
@@ -104,28 +142,68 @@
     <main>
         <h1>Your Cart</h1>
         <ul id="cart-list"></ul>
-        <button id="clear-cart">Clear Cart</button>      
+        <div id="btns">
+            <button id="clear-cart">Clear Cart</button>
+            <button id="sendWhatsapp">Buy</button>
+        </div>
+
+
     </main>
-  <script>
-    // استرجاع المنتجات
-    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    <script>
+        // استرجاع المنتجات
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-    const cartList = document.getElementById("cart-list");
-    const clearBtn = document.getElementById("clear-cart");
+        const cartList = document.getElementById("cart-list");
+        const clearBtn = document.getElementById("clear-cart");
+        // عرض المنتجات في قائمة
+        if (cartItems.length === 0) {
+  cartList.innerHTML = `
+    <li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">
+      Empty
+    </li>`;
+} else {
+  cartItems.forEach(item => {
+    let li = document.createElement("li");
+    li.textContent = `${item.name} - ${item.price} EGP`;
+    cartList.appendChild(li);
+  });
+}
 
-    // عرض المنتجات في قائمة
-    cartItems.forEach(item => {
-      let li = document.createElement("li");
-      li.textContent = item;
-      cartList.appendChild(li);
-    });
 
-    // زرار يمسح السلة كلها
-    clearBtn.addEventListener("click", () => {
-      localStorage.removeItem("cartItems"); // يمسح من التخزين
-      cartList.innerHTML = ""; // يمسح من الصفحة
-      alert("Cart cleared!");
-    });
-  </script>
+
+        // زرار يمسح السلة كلها
+        clearBtn.addEventListener("click", () => {
+            localStorage.removeItem("cartItems"); // يمسح من localStorage
+            cartItems = []; // يمسح النسخة اللي في الذاكرة
+            cartList.innerHTML = `<li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">Empty</li>
+`;
+            //   alert("Cart cleared!");
+        });
+
+        // ✅ إرسال السلة على واتساب
+        document.getElementById("sendWhatsapp").addEventListener("click", () => {
+            if (cartItems.length === 0) {
+                alert("السلة فاضية!");
+                return;
+            }
+
+            // صياغة الرسالة
+            let message = "قائمة المشتريات:\n";
+            cartItems.forEach((item, index) => {
+                message += `${index + 1}- ${item.name} (${item.price})\n`;
+            });
+
+
+            // رقم الواتساب (اكتبيه بالصيغة الدولية من غير +)
+            let phoneNumber = "+2001022379431";
+
+            // لينك الواتساب
+            let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            // افتح الواتساب
+            window.open(url, "_blank");
+        });
+    </script>
 </body>
+
 </html>

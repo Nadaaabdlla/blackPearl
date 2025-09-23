@@ -48,12 +48,16 @@ cartBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     const card = btn.closest(".card");
     const itemName = card.querySelector("h4").innerText; // اسم المنتج
+    const itemPrice = card.querySelector("p").innerText; // سعر المنتج
 
     if (cartIcon.textContent.trim() === "add_shopping_cart") {
       // ✅ إضافة العنصر للسلة
       cartIcon.textContent = "remove_shopping_cart";
-      cartItems.push(itemName);
-    } else {
+      cartItems.push({
+        name: itemName,
+        price: itemPrice
+      });
+          } else {
       // ❌ إزالة العنصر من السلة
       cartIcon.textContent = "add_shopping_cart";
       cartItems = cartItems.filter(item => item !== itemName);
@@ -66,6 +70,7 @@ cartBtns.forEach(btn => {
     cartCount.textContent = cartItems.length;
   });
 });
+
 const categories = document.querySelector(".categories");
 const leftArrow = document.querySelector("#leftBtn");
 const rightArrow = document.querySelector(".arrow.right");

@@ -5,9 +5,15 @@
 }
 /* عند الهامش الصغير خلي نصوص أصغر */
 @media (max-width: 600px) {
-  #heroSection { height: 50vh; }
-  .hero-content h1 { font-size: 1.4rem; }
-  .hero-content h2 { font-size: 1rem; }
+  #heroSection {
+    height: 50vh;
+  }
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+  .hero-content h2 {
+    font-size: 1rem;
+  }
 }
 
 header {
@@ -53,12 +59,12 @@ header {
     list-style: none;
     gap: 20px;
     align-items: center;
-    #cartBtn{
+    #cartBtn {
       position: relative;
-      a{
+      a {
         color: black;
       }
-      #cart-count{
+      #cart-count {
         position: absolute;
         top: -12px;
         right: -10px;
@@ -76,87 +82,91 @@ header {
   }
 }
 main {
-  padding-bottom:20px ;
- /* slider structure */
-#heroSection {
-  position: relative;
-  width: 100%;
-  height: 70vh; /* اضبطي الارتفاع حسب اللي تحبيه */
-  overflow: hidden;
-}
+  padding-bottom: 20px;
+  /* slider structure */
+  #heroSection {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* اضبطي الارتفاع حسب اللي تحبيه */
+    overflow: hidden;
+  }
 
-.slider-window {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+  .slider-window {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
 
-.slider-track {
-  display: flex;
-  height: 100%;
-  transition: transform 0.8s ease-in-out;
-  will-change: transform;
-}
+  .slider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    will-change: transform;
+  }
 
-/* كل سلايد ياخد عرض الشاشة */
-.hero-slide {
-  min-width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  /* كل سلايد ياخد عرض الشاشة */
+  .hero-slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-/* محتوى داخل السلايد */
-.hero-content {
-  color: white;
-  text-align: center;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-}
+  /* محتوى داخل السلايد */
+  .hero-content {
+    color: white;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  }
 
-/* أسهم */
-.hero-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(0,0,0,0.35);
-  color: #fff;
-  border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-arrow.prev { left: 12px; }
-.hero-arrow.next { right: 12px; }
+  /* أسهم */
+  .hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-arrow.prev {
+    left: 12px;
+  }
+  .hero-arrow.next {
+    right: 12px;
+  }
 
-/* indicators */
-.indicators {
-  position: absolute;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 10;
-}
-.indicators .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.45);
-  cursor: pointer;
-}
-.indicators .dot.active {
-  background: white;
-}
+  /* indicators */
+  .indicators {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+  .indicators .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+  }
+  .indicators .dot.active {
+    background: white;
+  }
   #categoryContainer {
     padding-top: 20px;
     display: flex;
@@ -170,7 +180,7 @@ main {
       gap: 5px;
       max-width: 100%;
     }
-    
+
     .categories {
       display: flex;
       flex-wrap: nowrap;
@@ -180,16 +190,16 @@ main {
       gap: 10px;
       flex: 1;
     }
-    
+
     .categories::-webkit-scrollbar {
       display: none; /* نخفي الاسكرول */
     }
-    
+
     .categories .btn {
       flex: 0 0 auto;
       white-space: nowrap;
     }
-    
+
     .arrow {
       border: none;
       background: none;
@@ -197,16 +207,16 @@ main {
       cursor: pointer;
       padding: 15px;
     }
-    #leftBtn{
+    #leftBtn {
       display: none;
     }
     .btn-group {
-        display: flex;
-        flex-wrap: nowrap; /* يخليهم صف واحد */
-        overflow-x: auto;  /* يخلي في Scroll أفقي */
-        -webkit-overflow-scrolling: touch; /* يخلي السحب باللمس ناعم */
-        gap: 10px; /* مسافة صغيرة بين الأزرار */
-        padding-bottom: 5px; /* عشان يظهر الـ scroll تحت */
+      display: flex;
+      flex-wrap: nowrap; /* يخليهم صف واحد */
+      overflow-x: auto; /* يخلي في Scroll أفقي */
+      -webkit-overflow-scrolling: touch; /* يخلي السحب باللمس ناعم */
+      gap: 10px; /* مسافة صغيرة بين الأزرار */
+      padding-bottom: 5px; /* عشان يظهر الـ scroll تحت */
       .btn {
         margin: 5px;
         border-radius: 0;
@@ -220,7 +230,7 @@ main {
         transition: all 0.3s;
       }
     }
-    .hidden{
+    .hidden {
       display: none;
     }
     .card {
@@ -274,19 +284,58 @@ main {
     }
   }
 }
-footer{
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #dfdddd;
-  height: 100px;
+  background-color: #000000;
+  height: max-content;
   padding: 20px;
+  color: white;
+
+  #Footernavbar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    width: 100%;
+    nav {
+      display: inline-block;
+      li {
+        padding: 8px;
+        list-style: none;
+        a {
+          color: white;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f3d009;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a78f0c;
 }
 /*
 الاسبوع القادم كامل
 7
 8:30
 مواعيد الصلاة
+
+كريم محمود نجيبه 9 بعد ما نعرض على عبدالله بلال يروح 9 ونص
+
 
 */
