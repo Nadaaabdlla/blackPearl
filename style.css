@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/* =========================
+   Global Styles
+========================= */
 * {
   padding: 0;
   margin: 0;
@@ -6,7 +9,26 @@
           box-sizing: border-box;
 }
 
-/* عند الهامش الصغير خلي نصوص أصغر */
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f3d009;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a78f0c;
+}
+
+/* Responsive for small devices */
 @media (max-width: 600px) {
   #heroSection {
     height: 50vh;
@@ -19,7 +41,18 @@
   }
 }
 
+body {
+  position: relative;
+}
+
+/* =========================
+   Header
+========================= */
 header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,6 +64,7 @@ header {
   border-bottom: 1px solid #c7c7c7;
   -webkit-box-shadow: 1px 1px 5px #c7c7c7;
           box-shadow: 1px 1px 5px #c7c7c7;
+  background-color: white;
 }
 
 header img {
@@ -105,30 +139,31 @@ header #nav2 #cartBtn #cart-count {
   font-size: small;
 }
 
+/* =========================
+   Main
+========================= */
 main {
   padding-bottom: 20px;
-  /* slider structure */
-  /* كل سلايد ياخد عرض الشاشة */
-  /* محتوى داخل السلايد */
-  /* أسهم */
-  /* indicators */
+  /* Hero Slider */
+  /* Categories Section */
 }
 
 main #heroSection {
   position: relative;
   width: 100%;
   height: 70vh;
-  /* اضبطي الارتفاع حسب اللي تحبيه */
   overflow: hidden;
+  /* Slider arrows */
+  /* Slider indicators */
 }
 
-main .slider-window {
+main #heroSection .slider-window {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-main .slider-track {
+main #heroSection .slider-window .slider-track {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,7 +175,7 @@ main .slider-track {
   will-change: transform;
 }
 
-main .hero-slide {
+main #heroSection .slider-window .slider-track .hero-slide {
   min-width: 100%;
   height: 100%;
   background-size: cover;
@@ -156,13 +191,13 @@ main .hero-slide {
           justify-content: center;
 }
 
-main .hero-content {
+main #heroSection .slider-window .slider-track .hero-slide .hero-content {
   color: white;
   text-align: center;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
-main .hero-arrow {
+main #heroSection .hero-arrow {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -187,15 +222,15 @@ main .hero-arrow {
           justify-content: center;
 }
 
-main .hero-arrow.prev {
+main #heroSection .hero-arrow.prev {
   left: 12px;
 }
 
-main .hero-arrow.next {
+main #heroSection .hero-arrow.next {
   right: 12px;
 }
 
-main .indicators {
+main #heroSection .indicators {
   position: absolute;
   bottom: 18px;
   left: 50%;
@@ -208,7 +243,7 @@ main .indicators {
   z-index: 10;
 }
 
-main .indicators .dot {
+main #heroSection .indicators .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -216,7 +251,7 @@ main .indicators .dot {
   cursor: pointer;
 }
 
-main .indicators .dot.active {
+main #heroSection .indicators .dot.active {
   background: white;
 }
 
@@ -233,6 +268,7 @@ main #categoryContainer {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+  /* Cards */
 }
 
 main #categoryContainer .category-slider {
@@ -247,7 +283,7 @@ main #categoryContainer .category-slider {
   max-width: 100%;
 }
 
-main #categoryContainer .categories {
+main #categoryContainer .category-slider .categories {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -255,7 +291,6 @@ main #categoryContainer .categories {
       flex-wrap: nowrap;
   overflow-x: auto;
   scroll-behavior: smooth;
-  /* حركة ناعمة */
   -webkit-overflow-scrolling: touch;
   gap: 10px;
   -webkit-box-flex: 1;
@@ -263,19 +298,18 @@ main #categoryContainer .categories {
           flex: 1;
 }
 
-main #categoryContainer .categories::-webkit-scrollbar {
-  display: none;
-  /* نخفي الاسكرول */
-}
-
-main #categoryContainer .categories .btn {
+main #categoryContainer .category-slider .categories .btn {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   white-space: nowrap;
 }
 
-main #categoryContainer .arrow {
+main #categoryContainer .category-slider .categories::-webkit-scrollbar {
+  display: none;
+}
+
+main #categoryContainer .category-slider .arrow {
   border: none;
   background: none;
   font-size: 16px;
@@ -283,28 +317,23 @@ main #categoryContainer .arrow {
   padding: 15px;
 }
 
-main #categoryContainer #leftBtn {
+main #categoryContainer .category-slider #leftBtn {
   display: none;
 }
 
-main #categoryContainer .btn-group {
+main #categoryContainer .category-slider .btn-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  /* يخليهم صف واحد */
   overflow-x: auto;
-  /* يخلي في Scroll أفقي */
   -webkit-overflow-scrolling: touch;
-  /* يخلي السحب باللمس ناعم */
   gap: 10px;
-  /* مسافة صغيرة بين الأزرار */
   padding-bottom: 5px;
-  /* عشان يظهر الـ scroll تحت */
 }
 
-main #categoryContainer .btn-group .btn {
+main #categoryContainer .category-slider .btn-group .btn {
   margin: 5px;
   border-radius: 0;
   -webkit-box-flex: 0;
@@ -312,7 +341,7 @@ main #categoryContainer .btn-group .btn {
           flex: 0 0 auto;
 }
 
-main #categoryContainer .btn-group .active {
+main #categoryContainer .category-slider .btn-group .active {
   color: #e2c20f;
   border: none;
   border-bottom: 1px solid #ffd900;
@@ -320,11 +349,23 @@ main #categoryContainer .btn-group .active {
   transition: all 0.3s;
 }
 
-main #categoryContainer .hidden {
+main #categoryContainer #cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #categoryContainer #cards .card.hidden {
   display: none;
 }
 
-main #categoryContainer .card {
+main #categoryContainer #cards .card {
   width: 18rem;
   position: relative;
   overflow: hidden;
@@ -339,13 +380,13 @@ main #categoryContainer .card {
           align-items: center;
 }
 
-main #categoryContainer .card .card-img-top {
+main #categoryContainer #cards .card .card-img-top {
   border-radius: 9px 9px 0 0;
   height: 10rem;
   width: 18rem;
 }
 
-main #categoryContainer .card .offerBanner {
+main #categoryContainer #cards .card .offerBanner {
   color: #504e4e;
   font-size: large;
   text-align: center;
@@ -364,19 +405,19 @@ main #categoryContainer .card .offerBanner {
   left: -52px;
 }
 
-main #categoryContainer .card .card-body {
+main #categoryContainer #cards .card .card-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 15px;
 }
 
-main #categoryContainer .card .card-body h4 {
+main #categoryContainer #cards .card .card-body h4 {
   font-size: 1.1rem;
   font-weight: 700;
 }
 
-main #categoryContainer .card .cardBtns {
+main #categoryContainer #cards .card .cardBtns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -386,12 +427,15 @@ main #categoryContainer .card .cardBtns {
   height: fit-content;
 }
 
-main #categoryContainer .card .cardBtns .heartBtn {
+main #categoryContainer #cards .card .cardBtns .heartBtn {
   position: absolute;
   top: 20px;
   right: 15px;
 }
 
+/* =========================
+   Footer
+========================= */
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -410,54 +454,58 @@ footer {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  padding: 20px;
+  padding: 30px 10px;
   color: white;
+}
+
+footer #logoSlang {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+footer #logoSlang img {
+  width: 150px;
+  height: 50x;
 }
 
 footer #Footernavbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 
-footer #Footernavbar nav {
-  display: inline-block;
+footer #Footernavbar ul {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
 }
 
-footer #Footernavbar nav li {
-  padding: 8px;
+footer #Footernavbar ul li {
+  padding: 0 2px;
   list-style: none;
 }
 
-footer #Footernavbar nav li a {
+footer #Footernavbar ul li a {
   color: white;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #f3d009;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a78f0c;
 }
 
 /*
@@ -467,7 +515,6 @@ footer #Footernavbar nav li a {
 مواعيد الصلاة
 
 كريم محمود نجيبه 9 بعد ما نعرض على عبدالله بلال يروح 9 ونص
-
 
 */
 /*# sourceMappingURL=style.css.map */

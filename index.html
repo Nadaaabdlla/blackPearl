@@ -27,16 +27,17 @@
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Black Pearl</h5>
+                        <img src="assets/logoText.png" alt="logo" style="width: 150px; height: 40px;">
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#heroSection">Home</a>
+                                <a class="nav-link active" aria-current="page" data-bs-dismiss="offcanvas" href="#heroSection">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#categoryContainer">categories</a>
+                                <a class="nav-link" href="#categoryContainer" data-bs-dismiss="offcanvas">categories</a>
+                                <a class="nav-link" href="#footer" data-bs-dismiss="offcanvas">AboutUs</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -44,28 +45,34 @@
                                     Contact us
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
-                                        <i class="fa-brands fa-square-facebook" style="padding: 0 5px 0 0;"></i>Facebook
-                                    </a></li>
-                                    <li><a class="dropdown-item" href="https://www.instagram.com/blackpearl_store04/">
-                                        <i class="fa-brands fa-square-instagram" style="padding: 0 5px 0 0;"></i>Instagram
-                                    </a></li>
-                                    <li><a class="dropdown-item" href="https://wa.me/+2001022379431">
-                                        <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i>WhatsApp
-                                    </a></li>
+                                    <li><a class="dropdown-item" target="_blank"
+                                            href="https://www.facebook.com/profile.php?id=61573152634854" data-bs-dismiss="offcanvas"> 
+                                            <i class="fa-brands fa-square-facebook"
+                                                style="padding: 0 5px 0 0;"></i>Facebook
+                                        </a></li>
+                                    <li><a class="dropdown-item" href="https://www.instagram.com/blackpearl_store04/" data-bs-dismiss="offcanvas">
+                                            <i class="fa-brands fa-square-instagram"
+                                                style="padding: 0 5px 0 0;"></i>Instagram
+                                        </a></li>
+                                    <li><a class="dropdown-item" href="https://wa.me/+2001022379431" data-bs-dismiss="offcanvas">
+                                            <i class="fa-brands fa-square-whatsapp"
+                                                style="padding: 0 5px 0 0;"></i>WhatsApp
+                                        </a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="https://chat.whatsapp.com/DlyfycFpjj0BAe9UJ2607s">
-                                        <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> Our WhatsApp group
-                                    </a></li>
+                                    <li><a class="dropdown-item"
+                                            href="https://chat.whatsapp.com/DlyfycFpjj0BAe9UJ2607s" data-bs-dismiss="offcanvas">
+                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> Our
+                                            WhatsApp group
+                                        </a></li>
                                 </ul>
                             </li>
                         </ul>
                         <form class="d-flex mt-3" role="search">
                             <input class="form-control me-2 search_bar" type="search" placeholder="Search"
                                 aria-label="Search" />
-                            <button class="btn search" type="submit">Search</button>
+                            <button class="btn search" type="submit" data-bs-dismiss="offcanvas">Search</button>
                         </form>
                     </div>
                 </div>
@@ -79,7 +86,7 @@
             </li>
             <a href="heartItems.html">
                 <li class="mainHeartBtn">
-                    <i class="fa-regular fa-heart fa-xl"  style="color: rgb(0, 0, 0);"></i>
+                    <i class="fa-regular fa-heart fa-xl" style="color: rgb(0, 0, 0);"></i>
                 </li>
             </a>
         </nav>
@@ -87,76 +94,76 @@
     <main>
         <section id="heroSection">
             <div class="slider-window">
-              <div class="slider-track">
-                <div class="hero-slide" style="background-image: url('assets/heroBackground1.jpg')">
-                  <div class="hero-content">
-                    <h1>Welcome to our store</h1>
-                    <h2>Shine as you should</h2>
-                  </div>
+                <div class="slider-track">
+                    <div class="hero-slide" style="background-image: url('assets/heroBackground1.jpg')">
+                        <div class="hero-content">
+                            <h1>Welcome to our store</h1>
+                            <h2>Shine as you should</h2>
+                        </div>
+                    </div>
+
+                    <div class="hero-slide" style="background-image: url('assets/ac1.jpg')">
+                        <div class="hero-content">
+                            <h1>Discover New Styles</h1>
+                            <h2>Elegance redefined</h2>
+                        </div>
+                    </div>
+
+                    <div class="hero-slide" style="background-image: url('assets/ac2.jpg')">
+                        <div class="hero-content">
+                            <h1>Special Offers</h1>
+                            <h2>Don’t miss out</h2>
+                        </div>
+                    </div>
+                    <!-- (ممكن تضيفي سلايدات أكتر بنفس الشكل) -->
                 </div>
-          
-                <div class="hero-slide" style="background-image: url('assets/ac1.jpg')">
-                  <div class="hero-content">
-                    <h1>Discover New Styles</h1>
-                    <h2>Elegance redefined</h2>
-                  </div>
-                </div>
-          
-                <div class="hero-slide" style="background-image: url('assets/ac2.jpg')">
-                  <div class="hero-content">
-                    <h1>Special Offers</h1>
-                    <h2>Don’t miss out</h2>
-                  </div>
-                </div>
-                <!-- (ممكن تضيفي سلايدات أكتر بنفس الشكل) -->
-              </div>
             </div>
-          
+
             <!-- أسهم -->
             <button class="hero-arrow prev" aria-label="Prev">‹</button>
             <button class="hero-arrow next" aria-label="Next">›</button>
-          
+
             <!-- الدوتس -->
             <div class="indicators"></div>
-          </section>
-          
-          
+        </section>
+
         <section id="categoryContainer">
+            <h2 style="font-weight: 700;">Our categories</h2>
             <div class="category-slider">
                 <button class="arrow left" id="leftBtn"><i class="fa-solid fa-chevron-left"></i></button>
-              
                 <div class="btn-group categories">
-                  <a href="#" class="btn active">All</a>
-                  <a href="#" class="btn">Necklace </a>
-                  <a href="#" class="btn">Ring</a>
-                  <a href="#" class="btn">Medallion</a>
-                  <a href="#" class="btn">Bracelet</a>
-                  <a href="#" class="btn">earrings</a>
-                  <a href="#" class="btn">embroidery</a>
-                  <a href="#" class="btn">craft</a>
-                  <a href="#" class="btn">crochet</a>
-                  <a href="#" class="btn">plushies</a>
-                </div>
-                <!--  
+                    <a href="#" class="btn active">All</a>
+                    <a href="#" class="btn">Necklace </a>
+                    <a href="#" class="btn">Ring</a>
+                    <a href="#" class="btn">Medallion</a>
+                    <a href="#" class="btn">Bracelet</a>
+                    <a href="#" class="btn">earrings</a>
+                    <a href="#" class="btn">embroidery</a>
+                    <a href="#" class="btn">craft</a>
+                    <a href="#" class="btn">crochet</a>
+                    <a href="#" class="btn">plushies</a>
+                    <!--  
                 ss rings and bracelets  
                 Hand made necklace bracelets rings
                 bbf, couples
                 string bracelets 
                 other -->
+                </div>
                 <button class="arrow right"><i class="fa-solid fa-chevron-right"></i></button>
-              </div>
-              
-            <div class="card necklace">
-                <div class="offerBanner">
-                   Special offer
-                </div>
-                <img src="assets/ac2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="card-text">
-                        <h4 class="card-text">Some quick example text.</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card’s content.</p> 
+            </div>
+            <div id="cards">
+                <div class="card necklace">
+                    <div class="offerBanner">
+                        Special offer
                     </div>
+                    <img src="assets/ac2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="card-text">
+                            <h4 class="card-text">Some quick example text.</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the
+                                card’s content.</p>
+                        </div>
                         <div class="cardBtns">
                             <div class="cartBtn">
                                 <span class="material-symbols-outlined">
@@ -167,15 +174,15 @@
                                 <i class="fa-regular fa-heart fa-2xl"></i>
                             </div>
                         </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card ring">
-                <img src="assets/ac3.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="card-text">
-                        <h4 class="card-text">Some quick example</h4>
-                        <p class="card-text">70 EGP</p> 
-                    </div> 
+                <div class="card ring">
+                    <img src="assets/ac3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="card-text">
+                            <h4 class="card-text">Some quick example</h4>
+                            <p class="card-text">70 EGP</p>
+                        </div>
                         <div class="cardBtns">
                             <div class="cartBtn">
                                 <span class="material-symbols-outlined">
@@ -186,53 +193,56 @@
                                 <i class="fa-regular fa-heart fa-2xl"></i>
                             </div>
                         </div>
-
+    
+                    </div>
                 </div>
-            </div>
-            <div class="card medallion">
-                <img src="assets/ac1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="card-text">
-                        <h4 class="card-text">Some quick example text.</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card’s content.</p> 
-                    </div>
-                    <div class="cardBtns">
-                        <div class="cartBtn">
-                            <span class="material-symbols-outlined">
-                                add_shopping_cart
-                            </span>
+                <div class="card medallion">
+                    <img src="assets/ac1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="card-text">
+                            <h4 class="card-text">Some quick example text.</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the
+                                card’s content.</p>
                         </div>
-                        <div class="heartBtn">
-                            <i class="fa-regular fa-heart fa-2xl"></i>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <div class="card bracelet">
-                <img src="assets/ac4.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="card-text">
-                        <h4 class="card-text">Some quick example text.</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card’s content.</p> 
-                    </div>
-                    <div class="cardBtns">
-                        <div class="cartBtn">
-                            <span class="material-symbols-outlined">
-                                add_shopping_cart
-                            </span>
-                        </div>
-                        <div class="heartBtn">
-                            <i class="fa-regular fa-heart fa-2xl"></i>
+                        <div class="cardBtns">
+                            <div class="cartBtn">
+                                <span class="material-symbols-outlined">
+                                    add_shopping_cart
+                                </span>
+                            </div>
+                            <div class="heartBtn">
+                                <i class="fa-regular fa-heart fa-2xl"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="card bracelet">
+                    <img src="assets/ac4.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="card-text">
+                            <h4 class="card-text">Some quick example text.</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the
+                                card’s content.</p>
+                        </div>
+                        <div class="cardBtns">
+                            <div class="cartBtn">
+                                <span class="material-symbols-outlined">
+                                    add_shopping_cart
+                                </span>
+                            </div>
+                            <div class="heartBtn">
+                                <i class="fa-regular fa-heart fa-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+            </div>
         </section>
     </main>
     <footer id="footer">
-        <div>
-            <p style="font-weight: 900; color: rgb(250, 155, 13);">Black Pearl</p>
+        <div id="logoSlang">
+            <img src="assets/logoText.png" alt="logo">
             <p>
                 is your smart guide to discovering the true magic of Egypt!
                 We provide everything you need.
@@ -249,14 +259,17 @@
             <nav>
                 <ul>
                     <li><a target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
-                        <i class="fa-brands fa-square-facebook" style="padding: 0 5px 0 0; color: rgb(97, 166, 255);"></i>Facebook
-                    </a></li>
+                            <i class="fa-brands fa-square-facebook"
+                                style="padding: 0 5px 0 0; color: rgb(97, 166, 255);"></i>Facebook
+                        </a></li>
                     <li><a href="https://www.instagram.com/blackpearl_store04/">
-                        <i class="fa-brands fa-square-instagram" style="padding: 0 5px 0 0; color: rgb(190, 129, 248);"></i>Instagram
-                    </a></li>
+                            <i class="fa-brands fa-square-instagram"
+                                style="padding: 0 5px 0 0; color: rgb(190, 129, 248);"></i>Instagram
+                        </a></li>
                     <li><a href="https://wa.me/+2001022379431">
-                        <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0; color: rgb(7, 194, 7);"></i>WhatsApp
-                    </a></li>
+                            <i class="fa-brands fa-square-whatsapp"
+                                style="padding: 0 5px 0 0; color: rgb(7, 194, 7);"></i>WhatsApp
+                        </a></li>
                 </ul>
             </nav>
         </div>

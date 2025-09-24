@@ -1,9 +1,29 @@
+/* =========================
+   Global Styles
+========================= */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-/* عند الهامش الصغير خلي نصوص أصغر */
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #f3d009;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a78f0c;
+}
+
+/* Responsive for small devices */
 @media (max-width: 600px) {
   #heroSection {
     height: 50vh;
@@ -15,18 +35,29 @@
     font-size: 1rem;
   }
 }
-
+body{
+  position: relative;
+}
+/* =========================
+   Header
+========================= */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
   display: flex;
   justify-content: space-between;
   gap: 10px;
   padding: 10px 15px;
   border-bottom: 1px solid rgb(199, 199, 199);
   box-shadow: 1px 1px 5px rgb(199, 199, 199);
+  background-color:white ;
+
   img {
     width: 15%;
     height: 15%;
   }
+
   #nav1 {
     .navbar-toggler {
       border: none;
@@ -38,6 +69,7 @@ header {
     .navbar-toggler-icon {
       background-image: url("assets/bars-solid-full.svg");
     }
+
     .search {
       border: 1px solid rgb(0, 0, 0);
       border-radius: 10px;
@@ -54,16 +86,20 @@ header {
       box-shadow: none;
     }
   }
+
   #nav2 {
     display: flex;
     list-style: none;
     gap: 20px;
     align-items: center;
+
     #cartBtn {
       position: relative;
+
       a {
         color: black;
       }
+
       #cart-count {
         position: absolute;
         top: -12px;
@@ -72,7 +108,6 @@ header {
         color: white;
         border: 1px solid orangered;
         border-radius: 50%;
-        // padding: 3px;
         text-align: center;
         width: 20px;
         height: 20px;
@@ -81,209 +116,233 @@ header {
     }
   }
 }
+
+/* =========================
+   Main
+========================= */
 main {
   padding-bottom: 20px;
-  /* slider structure */
+
+  /* Hero Slider */
   #heroSection {
     position: relative;
     width: 100%;
-    height: 70vh; /* اضبطي الارتفاع حسب اللي تحبيه */
+    height: 70vh;
     overflow: hidden;
+
+    .slider-window {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .slider-track {
+        display: flex;
+        height: 100%;
+        transition: transform 0.8s ease-in-out;
+        will-change: transform;
+
+        .hero-slide {
+          min-width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .hero-content {
+            color: white;
+            text-align: center;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+          }
+        }
+      }
+    }
+
+    /* Slider arrows */
+    .hero-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.35);
+      color: #fff;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-arrow.prev {
+      left: 12px;
+    }
+    .hero-arrow.next {
+      right: 12px;
+    }
+
+    /* Slider indicators */
+    .indicators {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.45);
+        cursor: pointer;
+      }
+      .dot.active {
+        background: white;
+      }
+    }
   }
 
-  .slider-window {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .slider-track {
-    display: flex;
-    height: 100%;
-    transition: transform 0.8s ease-in-out;
-    will-change: transform;
-  }
-
-  /* كل سلايد ياخد عرض الشاشة */
-  .hero-slide {
-    min-width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* محتوى داخل السلايد */
-  .hero-content {
-    color: white;
-    text-align: center;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-  }
-
-  /* أسهم */
-  .hero-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.35);
-    color: #fff;
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-arrow.prev {
-    left: 12px;
-  }
-  .hero-arrow.next {
-    right: 12px;
-  }
-
-  /* indicators */
-  .indicators {
-    position: absolute;
-    bottom: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 10;
-  }
-  .indicators .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.45);
-    cursor: pointer;
-  }
-  .indicators .dot.active {
-    background: white;
-  }
+  /* Categories Section */
   #categoryContainer {
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+
     .category-slider {
       display: flex;
       align-items: center;
       position: relative;
       gap: 5px;
       max-width: 100%;
-    }
 
-    .categories {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scroll-behavior: smooth; /* حركة ناعمة */
-      -webkit-overflow-scrolling: touch;
-      gap: 10px;
-      flex: 1;
-    }
-
-    .categories::-webkit-scrollbar {
-      display: none; /* نخفي الاسكرول */
-    }
-
-    .categories .btn {
-      flex: 0 0 auto;
-      white-space: nowrap;
-    }
-
-    .arrow {
-      border: none;
-      background: none;
-      font-size: 16px;
-      cursor: pointer;
-      padding: 15px;
-    }
-    #leftBtn {
-      display: none;
-    }
-    .btn-group {
-      display: flex;
-      flex-wrap: nowrap; /* يخليهم صف واحد */
-      overflow-x: auto; /* يخلي في Scroll أفقي */
-      -webkit-overflow-scrolling: touch; /* يخلي السحب باللمس ناعم */
-      gap: 10px; /* مسافة صغيرة بين الأزرار */
-      padding-bottom: 5px; /* عشان يظهر الـ scroll تحت */
-      .btn {
-        margin: 5px;
-        border-radius: 0;
-        flex: 0 0 auto;
-      }
-      .active {
-        // background-color: rgba(226, 226, 226, 0.527);
-        color: rgb(226, 194, 15);
-        border: none;
-        border-bottom: 1px solid rgb(255, 217, 0);
-        transition: all 0.3s;
-      }
-    }
-    .hidden {
-      display: none;
-    }
-    .card {
-      width: 18rem;
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      border: 1px solid rgb(206, 205, 205);
-      // display: flex;
-      flex-direction: column;
-      align-items: center;
-      .card-img-top {
-        border-radius: 9px 9px 0 0;
-        height: 10rem;
-        width: 18rem;
-      }
-      .offerBanner {
-        color: rgb(80, 78, 78);
-        font-size: large;
-        text-align: center;
-        font-weight: 700;
-        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.644);
-        background: url("assets/gold.jpg");
-        background-size: cover;
-        height: 50px;
-        transform: rotate(-45deg);
-        padding: 10px;
-        width: 200px;
-        position: absolute;
-        top: 20px;
-        left: -52px;
-      }
-      .card-body {
+      .categories {
         display: flex;
-        gap: 15px;
-        h4 {
-          font-size: 1.1rem;
-          font-weight: 700;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+        flex: 1;
+
+        .btn {
+          flex: 0 0 auto;
+          white-space: nowrap;
         }
       }
-      .cardBtns {
+      .categories::-webkit-scrollbar {
+        display: none;
+      }
+
+      .arrow {
+        border: none;
+        background: none;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 15px;
+      }
+
+      #leftBtn {
+        display: none;
+      }
+
+      .btn-group {
         display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         gap: 10px;
-        height: fit-content;
-        .heartBtn {
+        padding-bottom: 5px;
+
+        .btn {
+          margin: 5px;
+          border-radius: 0;
+          flex: 0 0 auto;
+        }
+        .active {
+          color: rgb(226, 194, 15);
+          border: none;
+          border-bottom: 1px solid rgb(255, 217, 0);
+          transition: all 0.3s;
+        }
+      }
+    }
+     /* Cards */
+    #cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      .card.hidden {
+        display: none;
+      }
+      .card {
+        width: 18rem;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid rgb(206, 205, 205);
+        flex-direction: column;
+        align-items: center;
+
+        .card-img-top {
+          border-radius: 9px 9px 0 0;
+          height: 10rem;
+          width: 18rem;
+        }
+
+        .offerBanner {
+          color: rgb(80, 78, 78);
+          font-size: large;
+          text-align: center;
+          font-weight: 700;
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.644);
+          background: url("assets/gold.jpg");
+          background-size: cover;
+          height: 50px;
+          transform: rotate(-45deg);
+          padding: 10px;
+          width: 200px;
           position: absolute;
           top: 20px;
-          right: 15px;
+          left: -52px;
+        }
+
+        .card-body {
+          display: flex;
+          gap: 15px;
+
+          h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+          }
+        }
+
+        .cardBtns {
+          display: flex;
+          gap: 10px;
+          height: fit-content;
+
+          .heartBtn {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+          }
         }
       }
     }
   }
 }
+
+/* =========================
+   Footer
+========================= */
 footer {
   display: flex;
   flex-direction: column;
@@ -291,19 +350,31 @@ footer {
   justify-content: center;
   background-color: #000000;
   height: max-content;
-  padding: 20px;
+  padding: 30px 10px;
   color: white;
-
+  #logoSlang{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    img{
+      width: 150px;
+      height: 50x;
+    }
+  }
   #Footernavbar {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
+    flex-direction: column-reverse;
+    align-items: center;
     width: 100%;
-    nav {
-      display: inline-block;
+    ul {
+      padding: 0;
+      display: flex;
+      gap: 8px;
       li {
-        padding: 8px;
+        padding: 0 2px;
         list-style: none;
+
         a {
           color: white;
           transition: all 0.3s;
@@ -312,23 +383,7 @@ footer {
     }
   }
 }
-::-webkit-scrollbar {
-  width: 7px;
-}
 
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #f3d009;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a78f0c;
-}
 /*
 الاسبوع القادم كامل
 7
@@ -336,6 +391,5 @@ footer {
 مواعيد الصلاة
 
 كريم محمود نجيبه 9 بعد ما نعرض على عبدالله بلال يروح 9 ونص
-
 
 */
