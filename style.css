@@ -64,7 +64,7 @@ header {
   border-bottom: 1px solid #c7c7c7;
   -webkit-box-shadow: 1px 1px 5px #c7c7c7;
           box-shadow: 1px 1px 5px #c7c7c7;
-  background-color: white;
+  background-color: #faf0e6;
 }
 
 header img {
@@ -97,11 +97,11 @@ header #nav1 .search:active {
   border: none;
   background-image: url("assets/gold.jpg");
   background-size: cover;
-  color: white;
+  color: #ffffff;
 }
 
 header #nav1 .search_bar:focus {
-  border: 2px solid #8d8d8d;
+  border: 2px solid #c7c7c7;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -128,7 +128,7 @@ header #nav2 #cartBtn {
 }
 
 header #nav2 #cartBtn a {
-  color: black;
+  color: #000000;
 }
 
 header #nav2 #cartBtn #cart-count {
@@ -136,7 +136,7 @@ header #nav2 #cartBtn #cart-count {
   top: -12px;
   right: -10px;
   background-color: orangered;
-  color: white;
+  color: #ffffff;
   border: 1px solid orangered;
   border-radius: 50%;
   text-align: center;
@@ -150,6 +150,7 @@ header #nav2 #cartBtn #cart-count {
 ========================= */
 main {
   padding-bottom: 20px;
+  background-color: #faf0e6;
   /* Hero Slider */
   /* Categories Section */
 }
@@ -198,7 +199,7 @@ main #heroSection .slider-window .slider-track .hero-slide {
 }
 
 main #heroSection .slider-window .slider-track .hero-slide .hero-content {
-  color: white;
+  color: #ffffff;
   text-align: center;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
@@ -210,7 +211,7 @@ main #heroSection .hero-arrow {
           transform: translateY(-50%);
   z-index: 10;
   background: rgba(0, 0, 0, 0.35);
-  color: #fff;
+  color: #ffffff;
   border: none;
   width: 44px;
   height: 44px;
@@ -348,9 +349,9 @@ main #categoryContainer .category-slider .btn-group .btn {
 }
 
 main #categoryContainer .category-slider .btn-group .active {
-  color: #e2c20f;
+  color: #530663;
   border: none;
-  border-bottom: 1px solid #ffd900;
+  border-bottom: 1px solid #530663;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -372,11 +373,12 @@ main #categoryContainer #cards .card.hidden {
 }
 
 main #categoryContainer #cards .card {
-  width: 18rem;
+  background-color: #faf0e6;
+  width: 9rem;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  border: 1px solid #cecdcd;
+  border: 1px solid #c7c7c7;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -393,6 +395,7 @@ main #categoryContainer #cards .card .card-img-top {
 }
 
 main #categoryContainer #cards .card .offerBanner {
+  display: none;
   color: #504e4e;
   font-size: large;
   text-align: center;
@@ -415,6 +418,13 @@ main #categoryContainer #cards .card .card-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 15px;
 }
 
@@ -461,7 +471,7 @@ footer {
   height: -moz-max-content;
   height: max-content;
   padding: 30px 10px;
-  color: white;
+  color: #ffffff;
 }
 
 footer img {
@@ -504,7 +514,7 @@ footer #Footernavbar ul li img {
 }
 
 footer #Footernavbar ul li a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   vertical-align: top;
 }
