@@ -158,7 +158,7 @@ main {
 main #heroSection {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 45vh;
   overflow: hidden;
   /* Slider arrows */
   /* Slider indicators */
@@ -460,7 +460,7 @@ main #categoryContainer #cards .card .card-body .card-bodytext h4 {
 
 main #categoryContainer #cards .card .card-body .card-bodytext p {
   text-align: center;
-  display: none;
+  color: #be3232;
 }
 
 main #categoryContainer #cards .card .card-body .cartBtn {
