@@ -8,7 +8,7 @@
 }
 
 $main-color: rgb(83, 6, 99);
-$main-background-color: 	#faf0e6;
+$main-background-color: #faf0e6;
 $main-font-color: #000000;
 $second-font-color: #ffffff;
 $sub-font-color: #777777;
@@ -242,11 +242,6 @@ main {
         -webkit-overflow-scrolling: touch;
         gap: 10px;
         flex: 1;
-
-        .btn {
-          flex: 0 0 auto;
-          white-space: nowrap;
-        }
       }
       .categories::-webkit-scrollbar {
         display: none;
@@ -276,6 +271,9 @@ main {
           margin: 5px;
           border-radius: 0;
           flex: 0 0 auto;
+          white-space: nowrap;
+          font-weight: 650;
+          font-size: large;
         }
         .active {
           color: $main-color;
@@ -287,6 +285,7 @@ main {
     }
     /* Cards */
     #cards {
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
@@ -296,20 +295,34 @@ main {
       }
       .card {
         background-color: $main-background-color;
-        width: 9rem;
+        width: 10rem;
         position: relative;
         overflow: hidden;
         border-radius: 10px;
-        border: 1px solid $shadow-color;
+        border: 0px solid $shadow-color;
         flex-direction: column;
         align-items: center;
 
         .card-img-top {
-          border-radius: 9px 9px 0 0;
-          height: 10rem;
-          width: 18rem;
+          // border-radius: 9px 9px 0 0;
+          border-radius: 9px;
+          height: 14rem;
+          width: 10rem;
+          // filter: blur(10px);
+          // transition: filter 0.5s ease;
         }
-
+        // .card-img-top[data-loaded="true"] {
+        //   filter: blur(0);
+        // }
+        .lazy-img {
+          // opacity: 0;
+          transition: all 0.5s ease-in-out;
+          filter: blur(10px);
+        }
+        .lazy-img.loaded {
+          opacity: 1;
+          filter: blur(0);
+        }
         .offerBanner {
           display: none;
           color: rgb(80, 78, 78);
@@ -333,9 +346,23 @@ main {
           flex-direction: column;
           align-items: center;
           gap: 15px;
-          h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
+          padding: 5px;
+          .card-bodytext {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h4 {
+              font-size: 0.9rem;
+              font-weight: 700;
+              text-align: center;
+            }
+            p {
+              text-align: center;
+              display: none;
+            }
+          }
+          .cartBtn {
+            display: inline-block;
           }
         }
 
@@ -343,7 +370,6 @@ main {
           display: flex;
           gap: 10px;
           height: fit-content;
-
           .heartBtn {
             position: absolute;
             top: 20px;

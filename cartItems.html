@@ -148,61 +148,58 @@
 
 
     </main>
-    <script>
-        // استرجاع المنتجات
-        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+<script>
+    // Retrieve products
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-        const cartList = document.getElementById("cart-list");
-        const clearBtn = document.getElementById("clear-cart");
-        // عرض المنتجات في قائمة
+    const cartList = document.getElementById("cart-list");
+    const clearBtn = document.getElementById("clear-cart");
+
+    // Display products in the list
+    if (cartItems.length === 0) {
+        cartList.innerHTML = `
+        <li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">
+          Empty
+        </li>`;
+    } else {
+        cartItems.forEach(item => {
+            let li = document.createElement("li");
+            li.textContent = `${item.name} - ${item.price} EGP`;
+            cartList.appendChild(li);
+        });
+    }
+
+    // Button to clear the entire cart
+    clearBtn.addEventListener("click", () => {
+        localStorage.removeItem("cartItems"); // Remove from localStorage
+        cartItems = []; // Clear the in-memory copy
+        cartList.innerHTML = `<li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">Empty</li>`;
+        // alert("Cart cleared!");
+    });
+
+    // Send cart items via WhatsApp
+    document.getElementById("sendWhatsapp").addEventListener("click", () => {
         if (cartItems.length === 0) {
-  cartList.innerHTML = `
-    <li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">
-      Empty
-    </li>`;
-} else {
-  cartItems.forEach(item => {
-    let li = document.createElement("li");
-    li.textContent = `${item.name} - ${item.price} EGP`;
-    cartList.appendChild(li);
-  });
-}
+            alert("Cart is empty!");
+            return;
+        }
 
-
-
-        // زرار يمسح السلة كلها
-        clearBtn.addEventListener("click", () => {
-            localStorage.removeItem("cartItems"); // يمسح من localStorage
-            cartItems = []; // يمسح النسخة اللي في الذاكرة
-            cartList.innerHTML = `<li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">Empty</li>
-`;
-            //   alert("Cart cleared!");
+        // Format the message
+        let message = "Shopping List:\n";
+        cartItems.forEach((item, index) => {
+            message += `${index + 1}- ${item.name} (${item.price})\n`;
         });
 
-        // ✅ إرسال السلة على واتساب
-        document.getElementById("sendWhatsapp").addEventListener("click", () => {
-            if (cartItems.length === 0) {
-                alert("السلة فاضية!");
-                return;
-            }
+        // WhatsApp number (write it in international format without +)
+        let phoneNumber = "+2001022379431";
 
-            // صياغة الرسالة
-            let message = "قائمة المشتريات:\n";
-            cartItems.forEach((item, index) => {
-                message += `${index + 1}- ${item.name} (${item.price})\n`;
-            });
+        // WhatsApp link
+        let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-
-            // رقم الواتساب (اكتبيه بالصيغة الدولية من غير +)
-            let phoneNumber = "+2001022379431";
-
-            // لينك الواتساب
-            let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-            // افتح الواتساب
-            window.open(url, "_blank");
-        });
-    </script>
+        // Open WhatsApp
+        window.open(url, "_blank");
+    });
+</script>
 </body>
 
 </html>

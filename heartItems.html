@@ -106,26 +106,27 @@
         <ul id="cart-list"></ul>
         <button id="clear-cart">Clear</button>      
     </main>
-  <script>
-    // استرجاع المنتجات
-    let cartItems = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-    const cartList = document.getElementById("cart-list");
-    const clearBtn = document.getElementById("clear-cart");
-
-    // عرض المنتجات في قائمة
-    cartItems.forEach(item => {
-      let li = document.createElement("li");
-      li.textContent = item;
-      cartList.appendChild(li);
-    });
-
-    // زرار يمسح السلة كلها
-    clearBtn.addEventListener("click", () => {
-      localStorage.removeItem("wishlist"); // يمسح من التخزين
-      cartList.innerHTML = ""; // يمسح من الصفحة
-      alert("Cart cleared!");
-    });
-  </script>
+    <script>
+        // Retrieve products
+        let cartItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+      
+        const cartList = document.getElementById("cart-list");
+        const clearBtn = document.getElementById("clear-cart");
+      
+        // Display products in the list
+        cartItems.forEach(item => {
+          let li = document.createElement("li");
+          li.textContent = item;
+          cartList.appendChild(li);
+        });
+      
+        // Button to clear the entire wishlist
+        clearBtn.addEventListener("click", () => {
+          localStorage.removeItem("wishlist"); // Remove from storage
+          cartList.innerHTML = ""; // Clear from the page
+          alert("Cart cleared!");
+        });
+      </script>
+      
 </body>
 </html>
