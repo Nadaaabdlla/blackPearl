@@ -45,8 +45,8 @@ body {
 }
 
 /* =========================
-   Header
-========================= */
+     Header
+  ========================= */
 header {
   position: -webkit-sticky;
   position: sticky;
@@ -145,35 +145,38 @@ header #nav2 #cartBtn #cart-count {
 }
 
 /* =========================
-   Main
-========================= */
+     Main
+  ========================= */
 main {
-  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   background-color: #faf0e6;
-  /* Hero Slider */
-  /* Categories Section */
 }
 
-main a {
-  text-decoration: none;
-}
-
-main #heroSection {
+main #prodactDetailes {
   position: relative;
-  width: 100%;
-  height: 45vh;
+  width: 80%;
+  height: 120vh;
   overflow: hidden;
   /* Slider arrows */
   /* Slider indicators */
 }
 
-main #heroSection .slider-window {
+main #prodactDetailes .slider-window {
   width: 100%;
-  height: 100%;
+  height: 45%;
   overflow: hidden;
 }
 
-main #heroSection .slider-window .slider-track {
+main #prodactDetailes .slider-window .slider-track {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,7 +188,7 @@ main #heroSection .slider-window .slider-track {
   will-change: transform;
 }
 
-main #heroSection .slider-window .slider-track .hero-slide {
+main #prodactDetailes .slider-window .slider-track .hero-slide {
   min-width: 100%;
   height: 100%;
   background-size: cover;
@@ -199,15 +202,16 @@ main #heroSection .slider-window .slider-track .hero-slide {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border-radius: 10px;
 }
 
-main #heroSection .slider-window .slider-track .hero-slide .hero-content {
+main #prodactDetailes .slider-window .slider-track .hero-slide .hero-content {
   color: #ffffff;
   text-align: center;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
-main #heroSection .hero-arrow {
+main #prodactDetailes .hero-arrow {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -232,17 +236,17 @@ main #heroSection .hero-arrow {
           justify-content: center;
 }
 
-main #heroSection .hero-arrow.prev {
+main #prodactDetailes .hero-arrow.prev {
   left: 12px;
 }
 
-main #heroSection .hero-arrow.next {
+main #prodactDetailes .hero-arrow.next {
   right: 12px;
 }
 
-main #heroSection .indicators {
+main #prodactDetailes .indicators {
   position: absolute;
-  bottom: 18px;
+  bottom: 49%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -253,20 +257,19 @@ main #heroSection .indicators {
   z-index: 10;
 }
 
-main #heroSection .indicators .dot {
+main #prodactDetailes .indicators .dot {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(95, 95, 95, 0.45);
   cursor: pointer;
 }
 
-main #heroSection .indicators .dot.active {
-  background: white;
+main #prodactDetailes .indicators .dot.active {
+  background: black;
 }
 
-main #categoryContainer {
-  padding-top: 20px;
+main #prodactDetailes #detailes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,236 +280,62 @@ main #categoryContainer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10px;
-  /* Cards */
+  margin-top: 30%;
 }
 
-main #categoryContainer .category-slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  gap: 5px;
-  max-width: 100%;
-}
-
-main #categoryContainer .category-slider .categories {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  gap: 10px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-main #categoryContainer .category-slider .categories::-webkit-scrollbar {
-  display: none;
-}
-
-main #categoryContainer .category-slider .arrow {
-  border: none;
-  background: none;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 15px;
-}
-
-main #categoryContainer .category-slider #leftBtn {
-  display: none;
-}
-
-main #categoryContainer .category-slider .btn-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  gap: 10px;
-  padding-bottom: 5px;
-}
-
-main #categoryContainer .category-slider .btn-group .btn {
-  margin: 5px;
-  border-radius: 0;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  white-space: nowrap;
-  font-weight: 650;
-  font-size: large;
-}
-
-main #categoryContainer .category-slider .btn-group .active {
-  color: #530663;
-  border: none;
-  border-bottom: 1px solid #530663;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-main #categoryContainer #cards {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 15px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main #categoryContainer #cards .card.hidden {
-  display: none;
-}
-
-main #categoryContainer #cards .lazy-div {
-  opacity: 0;
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
-  -webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
-  transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  transition: opacity 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
-}
-
-main #categoryContainer #cards .lazy-div.visible {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-main #categoryContainer #cards .card {
-  background-color: #faf0e6;
-  width: 10rem;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  border: 0px solid #c7c7c7;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-main #categoryContainer #cards .card .card-img-top {
-  border-radius: 9px;
-  height: 14rem;
-  width: 10rem;
-}
-
-main #categoryContainer #cards .card .lazy-img {
-  opacity: 0;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
-}
-
-main #categoryContainer #cards .card .lazy-img.loaded {
-  opacity: 1;
-  -webkit-filter: blur(0);
-          filter: blur(0);
-}
-
-main #categoryContainer #cards .card .offerBanner {
-  z-index: 1000;
-  color: white;
-  font-size: 0.8rem;
-  text-align: center;
+main #prodactDetailes #detailes h4 {
   font-weight: 700;
-  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.644);
-          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.644);
-  background-color: #640964;
-  background-size: cover;
+}
+
+main #prodactDetailes #detailes .quantity-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+}
+
+main #prodactDetailes #detailes .btn-qty {
+  width: 40px;
   height: 40px;
-  padding: 10px 0;
-  width: 60px;
-  border-radius: 50px;
-  position: absolute;
-  bottom: 90px;
-  left: 10px;
+  font-size: 1.2rem;
 }
 
-main #categoryContainer #cards .card .card-body {
+main #prodactDetailes #detailes .qty-input {
+  width: 120px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+main #prodactDetailes #detailes #sendWhatsapp {
+  border: 1px solid black;
+  border-radius: 10px;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  padding: 10px;
+  width: 50%;
+  background-color: #5ea337;
+  color: white;
+}
+
+main #prodactDetailes #detailes div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 15px;
-  padding: 5px;
+  gap: 8px;
 }
 
-main #categoryContainer #cards .card .card-body .card-bodytext {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main #categoryContainer #cards .card .card-body .card-bodytext h4 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-main #categoryContainer #cards .card .card-body .card-bodytext p {
-  text-align: center;
+main #prodactDetailes #detailes div p {
   color: #be3232;
-}
-
-main #categoryContainer #cards .card .card-body .card-bodytext span {
-  text-decoration: line-through;
-  color: gray;
-  text-align: center;
-  display: block;
-}
-
-main #categoryContainer #cards .card .card-body .cartBtn {
   display: inline-block;
 }
 
-main #categoryContainer #cards .card .cardBtns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-main #categoryContainer #cards .card .cardBtns .heartBtn {
-  position: absolute;
-  top: 20px;
-  right: 15px;
+main #prodactDetailes #detailes div span {
+  text-decoration: line-through;
+  color: gray;
+  display: inline-block;
 }
 
 /* =========================
@@ -578,4 +407,4 @@ footer #Footernavbar ul li a {
   text-decoration: none;
   vertical-align: top;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=prodact1.css.map */
