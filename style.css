@@ -368,6 +368,22 @@ main #categoryContainer #cards .card.hidden {
   display: none;
 }
 
+main #categoryContainer #cards .lazy-div {
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+  -webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
+  transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
+}
+
+main #categoryContainer #cards .lazy-div.visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 main #categoryContainer #cards .card {
   background-color: #faf0e6;
   width: 10rem;
@@ -391,8 +407,9 @@ main #categoryContainer #cards .card .card-img-top {
 }
 
 main #categoryContainer #cards .card .lazy-img {
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   -webkit-filter: blur(10px);
           filter: blur(10px);
 }

@@ -248,17 +248,15 @@ window.addEventListener("load", () => {
       });
     });
   });
-
 });
-  // ================== LAZY LOADING ==================
+  // ================== LAZY LOADING (IMG) ==================
   document.addEventListener("DOMContentLoaded", () => {
     const lazyImages = document.querySelectorAll("img.lazy-img");
-  
     const imageObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const img = entry.target;
-          img.src = img.dataset.src; // load real image
+          img.src = img.dataset.src;
           img.addEventListener("load", () => {
             img.classList.add("loaded");
           });
@@ -266,8 +264,24 @@ window.addEventListener("load", () => {
         }
       });
     });
-  
     lazyImages.forEach(img => {
       imageObserver.observe(img);
     });
   }); 
+   // ================== LAZY LOADING (CARDS) ==================
+  document.addEventListener("DOMContentLoaded", () => {
+    const lazyDivs = document.querySelectorAll(".lazy-div");
+    const divObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const div = entry.target;
+          div.classList.add("visible");
+          observer.unobserve(div);
+        }
+      });
+    });
+    lazyDivs.forEach(div => {
+      divObserver.observe(div);
+    });
+  });
+  

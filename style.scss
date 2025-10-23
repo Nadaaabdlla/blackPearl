@@ -293,6 +293,17 @@ main {
       .card.hidden {
         display: none;
       }
+      .lazy-div {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      
+      .lazy-div.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
       .card {
         background-color: $main-background-color;
         width: 10rem;
@@ -310,8 +321,8 @@ main {
           width: 10rem;    
         }
         .lazy-img {
-          // opacity: 0;
-          transition: all 0.5s ease-in-out;
+          opacity: 0;
+          transition: opacity 0.5s ease-in-out;
           filter: blur(10px);
         }
         .lazy-img.loaded {
