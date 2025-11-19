@@ -8,6 +8,10 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;

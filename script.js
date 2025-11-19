@@ -14,79 +14,52 @@ window.addEventListener("load", () => {
   });
 
   // ================== SHOPPING CART ==================
-  const cartBtns = document.querySelectorAll(".cartBtn");
-  const cartCount = document.getElementById("cart-count");
-
-  let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-  cartCount.textContent = cartItems.length;
-
-  cartBtns.forEach(btn => {
-    const cartIcon = btn.querySelector("span");
-    btn.addEventListener("click", () => {
-      const card = btn.closest(".card");
-      const itemName = card.querySelector("h4").innerText;
-      const itemPrice = card.querySelector("p").innerText;
-
-      if (cartIcon.textContent.trim() === "add_shopping_cart") {
-        cartIcon.textContent = "remove_shopping_cart";
-        cartItems.push({ name: itemName, price: itemPrice });
-      } else {
-        cartIcon.textContent = "add_shopping_cart";
-        cartItems = cartItems.filter(item => item.name !== itemName);
-      }
-
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
-      cartCount.textContent = cartItems.length;
-    });
-  });
-
-  // ================== WISHLIST (HEARTS) ==================
-  const heartBtns = document.querySelectorAll(".heartBtn");
-  const mainHeartBtn = document.querySelector(".mainHeartBtn i");
-
-  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-  function updateMainHeart() {
-    if (wishlist.length > 0) {
-      mainHeartBtn.classList.replace("fa-regular", "fa-solid");
-      mainHeartBtn.style.color = "rgb(255, 73, 73)";
+  // Counter update
+  function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    function cartCounter(cart) {
+      let totalQty = 0;
+      cart.forEach((item) => {
+        let piecesNum = Number(item.qty);
+        totalQty += piecesNum;
+        return totalQty;
+      });
+      return Number(totalQty);
+    }
+    let cartCount = document.querySelector("#cart-count");
+    cartCount.textContent = Number(cartCounter(cart));
+    if (cartCount.textContent >= 100) {
+      cartCount.style.width = "max-content";
+      cartCount.style.height = "max-content";
+      cartCount.style.padding = "1px";
     } else {
-      mainHeartBtn.classList.replace("fa-solid", "fa-regular");
-      mainHeartBtn.style.color = "black";
+      cartCount.style.width = "20px";
+      cartCount.style.height = "20px";
+      cartCount.style.padding = "0px";
     }
   }
+  // run update once when loading
+  updateCartCount();
+  // ================= WISHLIST =================
+  const addToWishlistBtn = document.getElementById("addToWishlist");
+  addToWishlistBtn.addEventListener("click", () => {
+    let wishlist = JSON.parse(localStorage.getItem("wishlistItems")) || [];
 
-  heartBtns.forEach(btn => {
-    const card = btn.closest(".card");
-    const itemName = card.querySelector("h4").innerText;
-    const icon = btn.querySelector("i");
+    // avoid duplicates
+    const exists = wishlist.some((item) => item.name === productName);
+    if (!exists) {
+      wishlist.push({
+        name: productName,
+        price: Number(productPrice),
+        link: window.location.href,
+      });
 
-    if (wishlist.includes(itemName)) {
-      btn.classList.add("active");
-      icon.classList.replace("fa-regular", "fa-solid");
-      icon.style.color = "rgb(255, 73, 73)";
+      localStorage.setItem("wishlistItems", JSON.stringify(wishlist));
+      alert("Product added to wishlist ❤️");
+    } else {
+      alert("This product is already in your wishlist!");
     }
-
-    btn.addEventListener("click", () => {
-      if (wishlist.includes(itemName)) {
-        wishlist = wishlist.filter(item => item !== itemName);
-        btn.classList.remove("active");
-        icon.classList.replace("fa-solid", "fa-regular");
-        icon.style.color = "black";
-      } else {
-        wishlist.push(itemName);
-        btn.classList.add("active");
-        icon.classList.replace("fa-regular", "fa-solid");
-        icon.style.color = "red";
-      }
-
-      localStorage.setItem("wishlist", JSON.stringify(wishlist));
-      updateMainHeart();
-    });
   });
-
-  updateMainHeart();
-
   // ================== SEARCH BAR ==================
   const searchInput = document.querySelector(".search_bar");
   const searchForm = document.querySelector("form[role='search']");
@@ -104,7 +77,7 @@ window.addEventListener("load", () => {
     const query = searchInput.value.trim().toLowerCase();
     let foundAny = false;
 
-    cards.forEach(card => {
+    cards.forEach((card) => {
       const text = card.innerText.toLowerCase();
       if (text.includes(query)) {
         card.style.display = "block";
@@ -167,8 +140,12 @@ window.addEventListener("load", () => {
       updateDots();
     }
 
-    function nextSlide() { goToSlide(index + 1); }
-    function prevSlide() { goToSlide(index - 1); }
+    function nextSlide() {
+      goToSlide(index + 1);
+    }
+    function prevSlide() {
+      goToSlide(index - 1);
+    }
 
     track.addEventListener("transitionend", () => {
       const current = slides[index];
@@ -186,13 +163,25 @@ window.addEventListener("load", () => {
 
     const nextBtn = document.querySelector(".hero-arrow.next");
     const prevBtn = document.querySelector(".hero-arrow.prev");
-    nextBtn && nextBtn.addEventListener("click", () => { stopAuto(); nextSlide(); startAuto(); });
-    prevBtn && prevBtn.addEventListener("click", () => { stopAuto(); prevSlide(); startAuto(); });
+    nextBtn &&
+      nextBtn.addEventListener("click", () => {
+        stopAuto();
+        nextSlide();
+        startAuto();
+      });
+    prevBtn &&
+      prevBtn.addEventListener("click", () => {
+        stopAuto();
+        prevSlide();
+        startAuto();
+      });
 
     let autoTimer = null;
     function startAuto() {
       if (autoTimer) return;
-      autoTimer = setInterval(() => { nextSlide(); }, 3000);
+      autoTimer = setInterval(() => {
+        nextSlide();
+      }, 3000);
     }
     function stopAuto() {
       if (!autoTimer) return;
@@ -232,14 +221,14 @@ window.addEventListener("load", () => {
   const btnGroup = document.querySelector(".btn-group");
   const btns = btnGroup.querySelectorAll(".btn");
 
-  btns.forEach(button => {
+  btns.forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
-      btns.forEach(b => b.classList.remove("active"));
+      btns.forEach((b) => b.classList.remove("active"));
       button.classList.add("active");
 
       const filter = button.innerText.trim().toLowerCase();
-      cards.forEach(card => {
+      cards.forEach((card) => {
         if (filter === "all" || card.classList.contains(filter)) {
           card.classList.remove("hidden");
         } else {
@@ -249,39 +238,38 @@ window.addEventListener("load", () => {
     });
   });
 });
-  // ================== LAZY LOADING (IMG) ==================
-  document.addEventListener("DOMContentLoaded", () => {
-    const lazyImages = document.querySelectorAll("img.lazy-img");
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.addEventListener("load", () => {
-            img.classList.add("loaded");
-          });
-          observer.unobserve(img);
-        }
-      });
-    });
-    lazyImages.forEach(img => {
-      imageObserver.observe(img);
-    });
-  }); 
-   // ================== LAZY LOADING (CARDS) ==================
-  document.addEventListener("DOMContentLoaded", () => {
-    const lazyDivs = document.querySelectorAll(".lazy-div");
-    const divObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const div = entry.target;
-          div.classList.add("visible");
-          observer.unobserve(div);
-        }
-      });
-    });
-    lazyDivs.forEach(div => {
-      divObserver.observe(div);
+// ================== LAZY LOADING (IMG) ==================
+document.addEventListener("DOMContentLoaded", () => {
+  const lazyImages = document.querySelectorAll("img.lazy-img");
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.addEventListener("load", () => {
+          img.classList.add("loaded");
+        });
+        observer.unobserve(img);
+      }
     });
   });
-  
+  lazyImages.forEach((img) => {
+    imageObserver.observe(img);
+  });
+});
+// ================== LAZY LOADING (CARDS) ==================
+document.addEventListener("DOMContentLoaded", () => {
+  const lazyDivs = document.querySelectorAll(".lazy-div");
+  const divObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const div = entry.target;
+        div.classList.add("visible");
+        observer.unobserve(div);
+      }
+    });
+  });
+  lazyDivs.forEach((div) => {
+    divObserver.observe(div);
+  });
+});

@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/icon_logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="assets/icon_logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-        </script>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <title>Your Cart</title>
     <style>
@@ -19,8 +19,22 @@
             text-align: center;
         }
 
-        ul {
-            padding: 0;
+        #cart-list {
+            width: 100%;
+            padding: 0px;
+        }
+
+        #cart-list li {
+            list-style: none;
+            border: 1px solid rgb(0, 0, 0);
+            margin: 10px 0;
+            padding: 15px 10px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        #cart-list li a {
+            color: rgb(83, 6, 99);
         }
 
         main {
@@ -28,6 +42,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: 100vh;
         }
 
         #btns {
@@ -36,9 +51,17 @@
             width: 90%;
         }
 
+        #clear-cart {
+            border: 1px solid rgb(0, 0, 0);
+            background-color: white;
+        }
+
+        #sendWhatsapp {
+            border: 1px solid rgba(0, 0, 0, 0);
+        }
+
         #clear-cart,
         #sendWhatsapp {
-            border: 1px solid rgb(0, 0, 0);
             border-radius: 10px;
             transition: all 0.1s;
             padding: 10px;
@@ -66,8 +89,8 @@
 
 <body>
     <header>
-        <nav id="nav1" class="navbar" style="padding: 0;width: 71px;">
-            <div class="container-fluid" style="padding: 0;">
+        <nav id="nav1" class="navbar" style="padding: 0; width: 71px">
+            <div class="container-fluid" style="padding: 0">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -75,7 +98,9 @@
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Black Pearl</h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                            Black Pearl
+                        </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -92,27 +117,35 @@
                                     Contact us
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" target="_blank"
+                                    <li>
+                                        <a class="dropdown-item" target="_blank"
                                             href="https://www.facebook.com/profile.php?id=61573152634854">
                                             <i class="fa-brands fa-square-facebook"
-                                                style="padding: 0 5px 0 0;"></i>Facebook
-                                        </a></li>
-                                    <li><a class="dropdown-item" href="https://www.instagram.com/blackpearl_store04/">
-                                            <i class="fa-brands fa-square-instagram"
-                                                style="padding: 0 5px 0 0;"></i>Instagram
-                                        </a></li>
-                                    <li><a class="dropdown-item" href="https://wa.me/+2001022379431">
-                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i>
-                                            WhatsApp
-                                        </a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
+                                                style="padding: 0 5px 0 0"></i>Facebook
+                                        </a>
                                     </li>
-                                    <li><a class="dropdown-item"
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.instagram.com/blackpearl_store04/">
+                                            <i class="fa-brands fa-square-instagram"
+                                                style="padding: 0 5px 0 0"></i>Instagram
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://wa.me/+2001022379431">
+                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0"></i>
+                                            WhatsApp
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
                                             href="https://chat.whatsapp.com/DlyfycFpjj0BAe9UJ2607s">
-                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> Our
-                                            WhatsApp group
-                                        </a></li>
+                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0"></i>
+                                            Our WhatsApp group
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -125,81 +158,165 @@
                 </div>
             </div>
         </nav>
-        <img src="assets/icon_logo.png" alt="">
+        <img src="assets/icon_logo.png" alt="" />
         <nav id="nav2">
             <li id="cartBtn">
                 <a href="cartItems.html"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
-                <!-- <span id="cart-count">0</span> -->
+                <span id="cart-count">0</span>
             </li>
             <a href="heartItems.html">
                 <li class="mainHeartBtn">
-                    <i class="fa-regular fa-heart fa-xl" style="color: black;"></i>
+                    <i class="fa-regular fa-heart fa-xl" style="color: black"></i>
                 </li>
             </a>
         </nav>
     </header>
     <main>
         <h1>Your Cart</h1>
-        <ul id="cart-list"></ul>
+        <ol id="cart-list"></ol>
         <div id="btns">
             <button id="clear-cart">Clear Cart</button>
             <button id="sendWhatsapp">Buy</button>
         </div>
-
-
     </main>
-<script>
-    // Retrieve products
-    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    <footer id="footer">
+        <img src="assets/logoText.png" alt="logo">
+        <p style="text-align: center;">This website offers different high quality handmade accessories to match your
+            vibe</p>
+        <div id="Footernavbar">
+            <!-- <nav>
+            <ul>
+                <li><a href="#heroSection">Home</a></li>
+                 <li><a href="#footer">About</a></li> 
+                <li><a href="#categoryContainer">categories</a></li>
+            </ul>
+        </nav> -->
+            <nav style="justify-content: center;">
+                <ul>
+                    <li>
+                        <img src="assets/facebook.png" alt="">
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <img src="assets/instagram.png" alt="">
+                        <a href="https://www.instagram.com/blackpearl_store04/">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <img src="assets/whatsapp.png" alt="">
+                        <a href="https://wa.me/+2001022379431">
+                            WhatsApp
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <p>&copy;All copyrights reseved to Black Pearl</p>
+        <p> Made by Nada Tarek</p>
+    </footer>
+    <script>
+        // Retrieve products
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-    const cartList = document.getElementById("cart-list");
-    const clearBtn = document.getElementById("clear-cart");
+        const cartList = document.getElementById("cart-list");
+        const clearBtn = document.getElementById("clear-cart");
 
-    // Display products in the list
-    if (cartItems.length === 0) {
-        cartList.innerHTML = `
+        // Display products in the list
+        if (cartItems.length === 0) {
+            cartList.innerHTML = `
         <li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">
           Empty
         </li>`;
-    } else {
-        cartItems.forEach(item => {
-            let li = document.createElement("li");
-            li.textContent = `${item.name} - ${item.price} EGP`;
-            cartList.appendChild(li);
-        });
-    }
+        } else {
+            cartItems.forEach((item) => {
+                function pieces(num) {
+                    num = item.qty;
+                    return num == 1 ? "piece" : "pieces";
+                }
+                let li = document.createElement("li");
+                li.innerHTML = `
+             <a href="${item.link}" class="product-link">
+             <strong>${item.name}</strong>
+             </a>
+             <span> - ${item.price} EGP</span>
+             <span> - ${item.qty} ${pieces()}</span>
+           `;
 
-    // Button to clear the entire cart
-    clearBtn.addEventListener("click", () => {
-        localStorage.removeItem("cartItems"); // Remove from localStorage
-        cartItems = []; // Clear the in-memory copy
-        cartList.innerHTML = `<li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">Empty</li>`;
-        // alert("Cart cleared!");
-    });
-
-    // Send cart items via WhatsApp
-    document.getElementById("sendWhatsapp").addEventListener("click", () => {
-        if (cartItems.length === 0) {
-            alert("Cart is empty!");
-            return;
+                cartList.appendChild(li);
+            });
         }
 
-        // Format the message
-        let message = "Shopping List:\n";
-        cartItems.forEach((item, index) => {
-            message += `${index + 1}- ${item.name} (${item.price})\n`;
+        // Button to clear the entire cart
+        clearBtn.addEventListener("click", () => {
+            localStorage.removeItem("cartItems"); // Remove from localStorage
+            cartItems = []; // Clear the in-memory copy
+            cartList.innerHTML = `<li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">Empty</li>`;
+            // alert("Cart cleared!");
+            updateCartCount();
         });
 
-        // WhatsApp number (write it in international format without +)
-        let phoneNumber = "+2001022379431";
+        // Send cart items via WhatsApp
+        document.getElementById("sendWhatsapp").addEventListener("click", () => {
+            if (cartItems.length === 0) {
+                alert("Cart is empty!");
+                return;
+            }
 
-        // WhatsApp link
-        let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            // Format the message
+            let message = "Shopping List:\n";
+            let totalPrice = 0;
 
-        // Open WhatsApp
-        window.open(url, "_blank");
-    });
-</script>
+            cartItems.forEach((item, index) => {
+                let itemTotal = item.price * item.qty; // total for each product
+                totalPrice += itemTotal;
+
+                message += `${index + 1}- *${item.name}* (${item.price} EGP × ${item.qty}) = ${itemTotal} EGP\n`;
+            });
+
+            message += `\n*Total Price*: ${totalPrice} EGP`; // add total at the end
+
+            // WhatsApp number
+            let phoneNumber = "2001022379431";
+
+            // WhatsApp link
+            let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+
+            // Open WhatsApp
+            window.open(url, "_blank");
+        });
+        // Counter update
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+            function cartCounter(cart) {
+                let totalQty = 0;
+                cart.forEach((item) => {
+                    let piecesNum = Number(item.qty);
+                    totalQty += piecesNum;
+                    return totalQty;
+                });
+                return Number(totalQty);
+            }
+            let cartCount = document.querySelector("#cart-count");
+            cartCount.textContent = Number(cartCounter(cart));
+            if (cartCount.textContent >= 100) {
+                cartCount.style.width = "max-content";
+                cartCount.style.height = "max-content";
+                cartCount.style.padding = "1px";
+            } else {
+                cartCount.style.width = "20px";
+                cartCount.style.height = "20px";
+                cartCount.style.padding = "0px";
+            };
+
+        }
+        // run update once when loading
+        updateCartCount();
+
+    </script>
 </body>
 
 </html>

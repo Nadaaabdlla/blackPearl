@@ -158,6 +158,7 @@ main {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  width: 100%;
   background-color: #faf0e6;
 }
 
@@ -165,7 +166,6 @@ main #prodactDetailes {
   position: relative;
   width: 80%;
   height: 120vh;
-  overflow: hidden;
   /* Slider arrows */
   /* Slider indicators */
 }
@@ -309,30 +309,83 @@ main #prodactDetailes #detailes .qty-input {
   font-size: 1.1rem;
 }
 
-main #prodactDetailes #detailes #sendWhatsapp {
+main #prodactDetailes #detailes .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+  width: 100.2%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main #prodactDetailes #detailes .btns #sendWhatsapp {
   border: 1px solid black;
   border-radius: 10px;
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   padding: 10px;
-  width: 50%;
-  background-color: #5ea337;
+  width: 100%;
+  background-color: white;
+}
+
+main #prodactDetailes #detailes .btns #sendWhatsapp .fa-cart-shopping {
+  color: #37691a;
+}
+
+main #prodactDetailes #detailes .btns #sendWhatsapp:focus {
+  border-color: #37691a;
+  background-color: #37691a;
   color: white;
 }
 
-main #prodactDetailes #detailes div {
+main #prodactDetailes #detailes .btns #sendWhatsapp:focus .fa-cart-shopping {
+  color: white;
+}
+
+main #prodactDetailes #detailes .btns #addToWishlist {
+  border: 1px solid black;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 10px;
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+
+main #prodactDetailes #detailes .btns #addToWishlist .fa-heart {
+  color: #530663;
+}
+
+main #prodactDetailes #detailes .btns #addToWishlist:focus {
+  border-color: #530663;
+  background-color: #530663;
+  color: white;
+}
+
+main #prodactDetailes #detailes .btns #addToWishlist:focus .fa-heart {
+  color: white;
+}
+
+main #prodactDetailes #detailes #price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 8px;
 }
 
-main #prodactDetailes #detailes div p {
+main #prodactDetailes #detailes #price .newPrice {
   color: #be3232;
   display: inline-block;
 }
 
-main #prodactDetailes #detailes div span {
+main #prodactDetailes #detailes #price .oldPrice {
   text-decoration: line-through;
   color: gray;
   display: inline-block;

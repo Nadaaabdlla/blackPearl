@@ -127,9 +127,9 @@
                 <p style="text-align: center;">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo harum sequi laudantium id quod
                 </p>
-                <div>
-                    <span class="card-text">Price: 90 EGP</span>
-                    <p class="card-text">Price: 70 EGP</p>
+                <div id="price">
+                    <span class="card-text oldPrice">Price: 90 EGP</span>
+                    <p class="card-text newPrice">Price: 70 EGP</p>
                 </div>
                 <div class="p-4">
                     <div class="container text-center">
@@ -142,7 +142,18 @@
                         </div>
                     </div>
                 </div>
-                <button id="sendWhatsapp">Add to cart</button>
+
+                <div class="btns">
+                    <button id="sendWhatsapp">
+                        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                        <span class="text">Add to cart</span>
+                    </button>
+                    <button id="addToWishlist">
+                        <i class="fa-solid fa-heart fa-xl"></i>
+                        <span class="text">Add to wishlist</span>
+                    </button>
+                </div>
+
             </div>
         </section>
     </main>
@@ -199,80 +210,6 @@
                     }, 300);
                 }
             });
-
-            // ================== SHOPPING CART ==================
-            const cartBtns = document.querySelectorAll(".cartBtn");
-            const cartCount = document.getElementById("cart-count");
-
-            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-            cartCount.textContent = cartItems.length;
-
-            cartBtns.forEach(btn => {
-                const cartIcon = btn.querySelector("span");
-                btn.addEventListener("click", () => {
-                    const card = btn.closest(".card");
-                    const itemName = card.querySelector("h4").innerText;
-                    const itemPrice = card.querySelector("p").innerText;
-
-                    if (cartIcon.textContent.trim() === "add_shopping_cart") {
-                        cartIcon.textContent = "remove_shopping_cart";
-                        cartItems.push({ name: itemName, price: itemPrice });
-                    } else {
-                        cartIcon.textContent = "add_shopping_cart";
-                        cartItems = cartItems.filter(item => item.name !== itemName);
-                    }
-
-                    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-                    cartCount.textContent = cartItems.length;
-                });
-            });
-
-            // ================== WISHLIST (HEARTS) ==================
-            const heartBtns = document.querySelectorAll(".heartBtn");
-            const mainHeartBtn = document.querySelector(".mainHeartBtn i");
-
-            let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-            function updateMainHeart() {
-                if (wishlist.length > 0) {
-                    mainHeartBtn.classList.replace("fa-regular", "fa-solid");
-                    mainHeartBtn.style.color = "rgb(255, 73, 73)";
-                } else {
-                    mainHeartBtn.classList.replace("fa-solid", "fa-regular");
-                    mainHeartBtn.style.color = "black";
-                }
-            }
-
-            heartBtns.forEach(btn => {
-                const card = btn.closest(".card");
-                const itemName = card.querySelector("h4").innerText;
-                const icon = btn.querySelector("i");
-
-                if (wishlist.includes(itemName)) {
-                    btn.classList.add("active");
-                    icon.classList.replace("fa-regular", "fa-solid");
-                    icon.style.color = "rgb(255, 73, 73)";
-                }
-
-                btn.addEventListener("click", () => {
-                    if (wishlist.includes(itemName)) {
-                        wishlist = wishlist.filter(item => item !== itemName);
-                        btn.classList.remove("active");
-                        icon.classList.replace("fa-solid", "fa-regular");
-                        icon.style.color = "black";
-                    } else {
-                        wishlist.push(itemName);
-                        btn.classList.add("active");
-                        icon.classList.replace("fa-regular", "fa-solid");
-                        icon.style.color = "red";
-                    }
-
-                    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-                    updateMainHeart();
-                });
-            });
-
-            updateMainHeart();
             // ================== HERO SLIDER ==================
             (function () {
                 const track = document.querySelector(".slider-track");
@@ -360,7 +297,7 @@
                 sliderWindow.addEventListener("mouseenter", stopAuto);
                 sliderWindow.addEventListener("mouseleave", startAuto);
 
-                // startAuto();
+                startAuto();
             })();
 
             // ================== LAZY LOADING (IMG) ==================
@@ -399,13 +336,17 @@
                 });
             });
         });
+        // ================= CARTCOUNTER =================
         document.addEventListener("DOMContentLoaded", () => {
+            // ================= SELECTORS =================
+            const addToCartBtn = document.getElementById("sendWhatsapp");
+            const cartCount = document.getElementById("cart-count");
             const decreaseBtn = document.getElementById("decreaseBtn");
             const increaseBtn = document.getElementById("increaseBtn");
             const qtyInput = document.getElementById("qtyInput");
 
-            const MIN_QTY = 1;
-            const MAX_QTY = 99;
+            const MIN_QTY = 0;
+            const MAX_QTY = 100;
 
             function normalizeQty(value) {
                 let n = parseInt(value, 10);
@@ -439,10 +380,81 @@
                 qtyInput.value = qty;
                 updateButtons(qty);
             });
-
             // Initialize buttons
             updateButtons(parseInt(qtyInput.value, 10));
+
+            // PRODUCT DETAILS
+            const productName = document.querySelector("h4.card-text").textContent;
+            const productPrice = document.querySelector(".newPrice").textContent.replace("Price: ", "").replace(" EGP", "");
+
+            // ================= CART =================
+            addToCartBtn.addEventListener("click", () => {
+                const quantity = parseInt(qtyInput.value);
+                if (quantity == 0) {
+                    alert("You can't add nothing to the cart");
+                } else {
+                    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+                    cart.push({
+                        name: productName,
+                        price: Number(productPrice),
+                        qty: quantity,
+                        link: window.location.href,
+                    });
+                    localStorage.setItem("cartItems", JSON.stringify(cart));
+                    updateCartCount();
+                    qtyInput.value -= qtyInput.value;
+                }
+            });
+            // Counter update
+            function updateCartCount() {
+                let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+                function cartCounter(cart) {
+                    let totalQty = 0;
+                    cart.forEach((item) => {
+                        let piecesNum = Number(item.qty);
+                        totalQty += piecesNum;
+                        return totalQty;
+                    });
+                    return Number(totalQty);
+                }
+                cartCount.textContent = Number(cartCounter(cart));
+                if (cartCount.textContent >= 100) {
+                cartCount.style.width = "max-content";
+                cartCount.style.height = "max-content";
+                cartCount.style.padding = "1px";
+            } else {
+                cartCount.style.width = "20px";
+                cartCount.style.height = "20px";
+                cartCount.style.padding = "0px";
+            }
+            }
+            // run update once when loading
+            updateCartCount();
+             // ================= WISHLIST =================
+             const addToWishlistBtn = document.getElementById("addToWishlist");
+            addToWishlistBtn.addEventListener("click", () => {
+                let wishlist = JSON.parse(localStorage.getItem("wishlistItems")) || [];
+
+                // avoid duplicates
+                const exists = wishlist.some(item => item.name === productName);
+                if (!exists) {
+                    wishlist.push({
+                        name: productName,
+                        price: Number(productPrice),
+                        link: window.location.href
+                    });
+
+                    localStorage.setItem("wishlistItems", JSON.stringify(wishlist));
+                    alert("Product added to wishlist ❤️");
+                } else {
+                    alert("This product is already in your wishlist!");
+                }
+
+            });
+
         });
+
+
     </script>
 </body>
 

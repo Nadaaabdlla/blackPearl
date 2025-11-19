@@ -14,6 +14,9 @@ $second-font-color: #ffffff;
 $sub-font-color: #777777;
 $shadow-color: rgb(199, 199, 199);
 
+html {
+  scroll-behavior: smooth;
+}
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,28 +14,55 @@
         </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <title>Your Cart</title>
-  <style>
-    main{
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #clear-cart{
-        border: 1px solid rgb(0, 0, 0);
-        border-radius: 10px;
-        transition: all 0.1s;
-        padding: 10px;
-    }
-    #clear-cart:active{
-        background-color: red;
-        color: white;
-        border-color: red;
-    }
-  </style>
+    <style>
+        ol {
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            padding: 10px 0 10px 25px ;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        main ol li {
+            list-style: circle;
+        }
+
+        li a {
+            color: rgb(83, 6, 99);
+        }
+
+
+        main {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #clear-cart {
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            transition: all 0.1s;
+            padding: 10px 30px;
+            background-color: rgb(252, 53, 53);
+            color: white;
+            border-color: red;
+            margin: 10px;
+        }
+
+        #clear-cart:active {
+            background-color: rgb(150, 10, 10);
+            color: white;
+            border-color: rgb(150, 10, 10);
+        }
+    </style>
 </head>
+
 <body>
-      <header>
+    <header>
         <nav id="nav1" class="navbar" style="padding: 0;width: 71px;">
             <div class="container-fluid" style="padding: 0;">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -61,21 +89,27 @@
                                     Contact us
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
-                                        <i class="fa-brands fa-square-facebook" style="padding: 0 5px 0 0;"></i>Facebook
-                                    </a></li>
+                                    <li><a class="dropdown-item" target="_blank"
+                                            href="https://www.facebook.com/profile.php?id=61573152634854">
+                                            <i class="fa-brands fa-square-facebook"
+                                                style="padding: 0 5px 0 0;"></i>Facebook
+                                        </a></li>
                                     <li><a class="dropdown-item" href="https://www.instagram.com/blackpearl_store04/">
-                                        <i class="fa-brands fa-square-instagram" style="padding: 0 5px 0 0;"></i>Instagram
-                                    </a></li>
+                                            <i class="fa-brands fa-square-instagram"
+                                                style="padding: 0 5px 0 0;"></i>Instagram
+                                        </a></li>
                                     <li><a class="dropdown-item" href="https://wa.me/+2001022379431">
-                                        <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> WhatsApp
-                                    </a></li>
+                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i>
+                                            WhatsApp
+                                        </a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="https://chat.whatsapp.com/DlyfycFpjj0BAe9UJ2607s">
-                                        <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> Our WhatsApp group
-                                    </a></li>
+                                    <li><a class="dropdown-item"
+                                            href="https://chat.whatsapp.com/DlyfycFpjj0BAe9UJ2607s">
+                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> Our
+                                            WhatsApp group
+                                        </a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -92,41 +126,112 @@
         <nav id="nav2">
             <li id="cartBtn">
                 <a href="cartItems.html"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
-                <!-- <span id="cart-count">0</span> -->
+                <span id="cart-count">0</span>
             </li>
             <a href="heartItems.html">
                 <li class="mainHeartBtn">
-                    <i class="fa-solid fa-heart fa-xl"  style="color: rgb(255, 73, 73);"></i>
+                    <i class="fa-solid fa-heart fa-xl" style="color: rgb(83, 6, 99);"></i>
                 </li>
             </a>
         </nav>
     </header>
     <main>
         <h1>Your favorites</h1>
-        <ul id="cart-list"></ul>
-        <button id="clear-cart">Clear</button>      
+        <ol id="cart-list"></ol>
+        <button id="clear-cart">Clear</button>
     </main>
+    <footer id="footer">
+        <img src="assets/logoText.png" alt="logo">
+        <p style="text-align: center;">This website offers different high quality handmade accessories to match your
+            vibe</p>
+        <div id="Footernavbar">
+            <!-- <nav>
+            <ul>
+                <li><a href="#heroSection">Home</a></li>
+                 <li><a href="#footer">About</a></li> 
+                <li><a href="#categoryContainer">categories</a></li>
+            </ul>
+        </nav> -->
+            <nav style="justify-content: center;">
+                <ul>
+                    <li>
+                        <img src="assets/facebook.png" alt="">
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <img src="assets/instagram.png" alt="">
+                        <a href="https://www.instagram.com/blackpearl_store04/">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <img src="assets/whatsapp.png" alt="">
+                        <a href="https://wa.me/+2001022379431">
+                            WhatsApp
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <p>&copy;All copyrights reseved to Black Pearl</p>
+        <p> Made by Nada Tarek</p>
+    </footer>
     <script>
-        // Retrieve products
-        let cartItems = JSON.parse(localStorage.getItem("wishlist")) || [];
-      
+        // Retrieve wishlist products
+        let wishlistItems = JSON.parse(localStorage.getItem("wishlistItems")) || [];
+
         const cartList = document.getElementById("cart-list");
         const clearBtn = document.getElementById("clear-cart");
-      
-        // Display products in the list
-        cartItems.forEach(item => {
-          let li = document.createElement("li");
-          li.textContent = item;
-          cartList.appendChild(li);
+
+        // Display products
+        wishlistItems.forEach(item => {
+            let li = document.createElement("li");
+            li.classList.add("wishlist-item");
+            li.innerHTML = `
+    <a href="${item.link}" class="product-link">
+      <strong>${item.name}</strong>
+    </a>
+  `;
+
+            cartList.appendChild(li);
         });
-      
-        // Button to clear the entire wishlist
+
+        // Button to clear wishlist
         clearBtn.addEventListener("click", () => {
-          localStorage.removeItem("wishlist"); // Remove from storage
-          cartList.innerHTML = ""; // Clear from the page
-          alert("Cart cleared!");
+            localStorage.removeItem("wishlistItems");
+            cartList.innerHTML = "";
         });
-      </script>
-      
+        // Counter update
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+            function cartCounter(cart) {
+                let totalQty = 0;
+                cart.forEach((item) => {
+                    let piecesNum = Number(item.qty);
+                    totalQty += piecesNum;
+                    return totalQty;
+                });
+                return Number(totalQty);
+            }
+            let cartCount = document.querySelector("#cart-count");
+            cartCount.textContent = Number(cartCounter(cart));
+            if (cartCount.textContent >= 100) {
+                cartCount.style.width = "max-content";
+                cartCount.style.height = "max-content";
+                cartCount.style.padding = "1px";
+            } else {
+                cartCount.style.width = "20px";
+                cartCount.style.height = "20px";
+                cartCount.style.padding = "0px";
+            }
+        }
+        
+        // run update once when loading
+        updateCartCount();
+    </script>
+
 </body>
+
 </html>
