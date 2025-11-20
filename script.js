@@ -40,26 +40,6 @@ window.addEventListener("load", () => {
   }
   // run update once when loading
   updateCartCount();
-  // ================= WISHLIST =================
-  const addToWishlistBtn = document.getElementById("addToWishlist");
-  addToWishlistBtn.addEventListener("click", () => {
-    let wishlist = JSON.parse(localStorage.getItem("wishlistItems")) || [];
-
-    // avoid duplicates
-    const exists = wishlist.some((item) => item.name === productName);
-    if (!exists) {
-      wishlist.push({
-        name: productName,
-        price: Number(productPrice),
-        link: window.location.href,
-      });
-
-      localStorage.setItem("wishlistItems", JSON.stringify(wishlist));
-      alert("Product added to wishlist ❤️");
-    } else {
-      alert("This product is already in your wishlist!");
-    }
-  });
   // ================== SEARCH BAR ==================
   const searchInput = document.querySelector(".search_bar");
   const searchForm = document.querySelector("form[role='search']");

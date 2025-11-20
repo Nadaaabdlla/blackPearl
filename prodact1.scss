@@ -89,7 +89,7 @@ header {
       background-size: cover;
       color: $second-font-color;
     }
-    .search_bar:focus {
+    .search_bar:active {
       border: 2px solid $shadow-color;
       box-shadow: none;
     }
@@ -262,13 +262,13 @@ main {
            color: rgb(55, 105, 26);
           }
         }
-        #sendWhatsapp:focus{
+        #sendWhatsapp:active{
           border-color:rgb(55, 105, 26) ;
           background-color: rgb(55, 105, 26);
           color: white;
 
         }
-        #sendWhatsapp:focus .fa-cart-shopping{
+        #sendWhatsapp:active .fa-cart-shopping{
          color: rgb(255, 255, 255);
         }
         #addToWishlist {
@@ -284,12 +284,12 @@ main {
           }
 
         }
-        #addToWishlist:focus{
+        #addToWishlist:active{
          border-color: $main-color; 
           background-color: $main-color;
           color: white;
         }
-        #addToWishlist:focus .fa-heart{
+        #addToWishlist:active .fa-heart{
           color: white;
         }
       }

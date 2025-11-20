@@ -99,7 +99,7 @@ header #nav1 .search:active {
   color: #ffffff;
 }
 
-header #nav1 .search_bar:focus {
+header #nav1 .search_bar:active {
   border: 2px solid #c7c7c7;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -338,13 +338,13 @@ main #prodactDetailes #detailes .btns #sendWhatsapp .fa-cart-shopping {
   color: #37691a;
 }
 
-main #prodactDetailes #detailes .btns #sendWhatsapp:focus {
+main #prodactDetailes #detailes .btns #sendWhatsapp:active {
   border-color: #37691a;
   background-color: #37691a;
   color: white;
 }
 
-main #prodactDetailes #detailes .btns #sendWhatsapp:focus .fa-cart-shopping {
+main #prodactDetailes #detailes .btns #sendWhatsapp:active .fa-cart-shopping {
   color: white;
 }
 
@@ -363,13 +363,13 @@ main #prodactDetailes #detailes .btns #addToWishlist .fa-heart {
   color: #530663;
 }
 
-main #prodactDetailes #detailes .btns #addToWishlist:focus {
+main #prodactDetailes #detailes .btns #addToWishlist:active {
   border-color: #530663;
   background-color: #530663;
   color: white;
 }
 
-main #prodactDetailes #detailes .btns #addToWishlist:focus .fa-heart {
+main #prodactDetailes #detailes .btns #addToWishlist:active .fa-heart {
   color: white;
 }
 

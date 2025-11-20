@@ -103,7 +103,7 @@ header #nav1 .search:active {
   color: #ffffff;
 }
 
-header #nav1 .search_bar:focus {
+header #nav1 .search_bar:active {
   border: 2px solid #c7c7c7;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -138,9 +138,9 @@ header #nav2 #cartBtn #cart-count {
   position: absolute;
   top: -12px;
   right: -10px;
-  background-color: orangered;
+  background-color: #900eaa;
   color: #ffffff;
-  border: 1px solid orangered;
+  border: 1px solid #900eaa;
   border-radius: 50%;
   text-align: center;
   width: 20px;

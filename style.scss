@@ -91,7 +91,7 @@ header {
       background-size: cover;
       color: $second-font-color;
     }
-    .search_bar:focus {
+    .search_bar:active {
       border: 2px solid $shadow-color;
       box-shadow: none;
     }
@@ -119,9 +119,9 @@ header {
         position: absolute;
         top: -12px;
         right: -10px;
-        background-color: orangered;
+        background-color: rgb(144, 14, 170);
         color: $second-font-color;
-        border: 1px solid orangered;
+        border: 1px solid rgb(144, 14, 170);
         border-radius: 50%;
         text-align: center;
         width: 20px;
