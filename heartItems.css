@@ -224,6 +224,10 @@ main {
   background-color: #faf0e6;
 }
 
+main h1 {
+  padding: 15px;
+}
+
 main ol {
   border: 1px solid black;
   border-radius: 10px;

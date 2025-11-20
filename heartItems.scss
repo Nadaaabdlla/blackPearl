@@ -3,6 +3,9 @@
 @import "headerAndFooter";
 @import "scrollAndMedia";
 main {
+    h1{
+        padding:15px;
+    }
     padding: 10px;
     display: flex;
     flex-direction: column;

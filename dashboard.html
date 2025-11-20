@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,10 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
         </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <script async src="//imgg.io/sdk/pup.js" data-url="https://imgg.io/upload" data-palette="purple" data-auto-insert="direct-links" data-sibling="#imgLink" data-sibling-pos="after"></script>
     <title>Dashboard</title>
 </head>
+
 <body>
     <header>
         <nav id="nav1" class="navbar" style="padding: 0; width: 71px">
@@ -98,55 +101,84 @@
             </a>
         </nav>
     </header>
-    <h1>Welcome Ayat!</h1>
-    <form action="" id="dashboardForm">
-        <label for=""></label>
-        <input type="text" name="" id="">
-        <label for=""></label>
-        <input type="text" name="" id="">
-        <label for=""></label>
-        <input type="text" name="" id="">
-        <label for=""></label>
-        <input type="text" name="" id="">
-        <label for=""></label>
-        <input type="text" name="" id="">
-    </form>
+    <main>
+        <h1>Welcome Ayat!</h1>
+        <form action="" id="dashboardForm">
+            <input type="text" name="" id="productName" placeholder="Product name" required>
+            <input type="number" name="" id="productPrice" placeholder="Product price" required>
+            <input type="text" name="" id="productDescription" placeholder="Product description">
+            <select id="productType">
+                <optgroup label="Product type">
+                    <option>necklace</option>
+                    <option>ring</option>
+                    <option>bracelet</option>
+                </optgroup>
+
+            </select><br>
+            <label for="" class="custom-radio">On sale?</label>
+            <label class="custom-radio">
+                <input type="radio" name="saleStatus" value="yes">
+                <span class="radio-btn"></span>
+                yes
+            </label>
+
+            <label class="custom-radio">
+                <input type="radio" name="saleStatus" value="no">
+                <span class="radio-btn"></span>
+                no
+            </label>
+            <textarea type="text" id="imgLink" placeholder="Link will be add here, Don't write anything"></textarea>
+            <!-- <label class="custom-file">
+                Choose product's photo
+                <input type="file" id="fileInput" accept="image/*">
+            </label> -->
+            <div class="preview">
+                <img id="previewImg" src="" alt="">
+            </div>
+            <div id="submitCon">
+                <input type="submit" id="submit">
+            </div>
+        </form>
+    </main>
     <footer id="footer">
         <img src="assets/logoText.png" alt="logo">
-        <p style="text-align: center;">This website offers different high quality handmade accessories to match your vibe</p>
-    <div id="Footernavbar">
-        <!-- <nav>
+        <p style="text-align: center;">This website offers different high quality handmade accessories to match your
+            vibe</p>
+        <div id="Footernavbar">
+            <!-- <nav>
             <ul>
                 <li><a href="#heroSection">Home</a></li>
                  <li><a href="#footer">About</a></li> 
                 <li><a href="#categoryContainer">categories</a></li>
             </ul>
         </nav> -->
-        <nav style="justify-content: center;">
-            <ul>
-                <li>
-                    <img src="assets/facebook.png" alt="">
-                    <a target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
-                        Facebook
-                    </a>
-                </li>
-                <li>
-                    <img src="assets/instagram.png" alt="">
-                    <a href="https://www.instagram.com/blackpearl_store04/">
-                        Instagram
-                    </a>
-                </li>
-                <li>
-                    <img src="assets/whatsapp.png" alt="">
-                    <a href="https://wa.me/+2001022379431">
-                        WhatsApp
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <p>&copy;All copyrights reseved to Black Pearl</p>
-    <p> Made by Nada Tarek</p>
-</footer>
+            <nav style="justify-content: center;">
+                <ul>
+                    <li>
+                        <img src="assets/facebook.png" alt="">
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <img src="assets/instagram.png" alt="">
+                        <a href="https://www.instagram.com/blackpearl_store04/">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <img src="assets/whatsapp.png" alt="">
+                        <a href="https://wa.me/+2001022379431">
+                            WhatsApp
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <p>&copy;All copyrights reseved to Black Pearl</p>
+        <p> Made by Nada Tarek</p>
+    </footer>
+    <script src="dashboard.js"></script>
 </body>
+
 </html>

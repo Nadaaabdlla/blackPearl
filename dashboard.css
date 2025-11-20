@@ -207,13 +207,44 @@ footer #Footernavbar ul li a {
   }
 }
 
-body h1 {
-  text-align: center;
-  margin: 10px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+main {
+  background-color: #faf0e6;
 }
 
-body #dashboardForm {
+main h1 {
+  text-align: center;
+  padding: 20px 0 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+main #dashboardForm {
+  margin: 20px;
+  padding: 20px 5px;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  border: 1px solid #360636;
+  border-radius: 15px;
+}
+
+main #dashboardForm .chevereto-pup-button {
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #471268;
+  margin: 5px 75px;
+  width: 60%;
+}
+
+main #dashboardForm .custom-file {
+  display: inline-block;
+  padding: 10px;
+  background-color: #360e50;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  margin: 10px auto;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -221,13 +252,108 @@ body #dashboardForm {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  row-gap: 10px;
-  height: auto;
-  min-height: 60vh;
+  gap: 10px;
+}
+
+main #dashboardForm .custom-file input {
+  display: none;
+}
+
+main #dashboardForm .preview {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #dashboardForm .preview img {
+  max-width: 200px;
+  max-height: 200px;
+  border: 2px solid #6a1b9a;
+  border-radius: 6px;
+  display: none;
+}
+
+main #dashboardForm #submitCon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+main #dashboardForm #submitCon #submit {
+  background-color: #360e50;
+  color: white;
+  margin: 20px 0 0;
+  width: 50%;
+  margin: 20px auto;
+}
+
+main #dashboardForm #submitCon #submit:active {
+  background-color: #771672;
+}
+
+main #dashboardForm input[type="file"] {
+  display: inline-block;
+}
+
+main #dashboardForm select,
+main #dashboardForm textarea,
+main #dashboardForm input:not([type="file"]) {
+  margin: 5px;
+  border-radius: 10px;
+  border: 1px solid #2c032c;
+  padding: 5px;
+  text-align: center;
+  width: 95%;
+}
+
+main #dashboardForm .custom-radio {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin: 10px 15px 0;
+  font-size: 18px;
+}
+
+main #dashboardForm .custom-radio input {
+  display: none;
+}
+
+main #dashboardForm .radio-btn {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #3a123a;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+}
+
+main #dashboardForm .custom-radio input:checked + .radio-btn::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #4d2c4d;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=dashboard.css.map */
