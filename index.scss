@@ -1,0 +1,283 @@
+@import "variables";
+@import "reset";
+@import "headerAndFooter";
+@import "scrollAndMedia";
+html {
+    scroll-behavior: smooth;
+  }
+  body {
+    position: relative;
+  }
+  /* =========================
+     Main
+  ========================= */
+  main {
+    padding-bottom: 20px;
+    background-color: $main-background-color;
+    height: auto;
+    min-height: 60vh;
+    a{
+      text-decoration: none;
+    }
+    
+    /* Hero Slider */
+    #heroSection{
+      position: relative;
+      width: 100%;
+      height: 45vh;
+      overflow: hidden;
+  
+      .slider-window {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+  
+        .slider-track {
+          display: flex;
+          height: 100%;
+          transition: transform 0.8s ease-in-out;
+          will-change: transform;
+  
+          .hero-slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+  
+            .hero-content {
+              color: $second-font-color;
+              text-align: center;
+              text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            }
+          }
+        }
+      }
+  
+      /* Slider arrows */
+      .hero-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.35);
+        color: $second-font-color;
+        border: none;
+        width:  30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero-arrow.prev {
+        left: 12px;
+      }
+      .hero-arrow.next {
+        right: 12px;
+      }
+  
+      /* Slider indicators */
+      .indicators {
+        position: absolute;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+  
+        .dot {
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.45);
+          cursor: pointer;
+        }
+        .dot.active {
+          background: white;
+        }
+      }
+    }
+  
+    /* Categories Section */
+    #categoryContainer {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  
+      .category-slider {
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 5px;
+        max-width: 100%;
+  
+        .categories {
+          display: flex;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+          gap: 10px;
+          flex: 1;
+        }
+        .categories::-webkit-scrollbar {
+          display: none;
+        }
+  
+        .arrow {
+          border: none;
+          background: none;
+          font-size: 16px;
+          cursor: pointer;
+          padding: 15px;
+        }
+  
+        #leftBtn {
+          display: none;
+        }
+  
+        .btn-group {
+          display: flex;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          gap: 10px;
+          padding-bottom: 5px;
+  
+          .btn {
+            margin: 5px;
+            border-radius: 0;
+            flex: 0 0 auto;
+            white-space: nowrap;
+            font-weight: 650;
+            font-size: large;
+          }
+          .active {
+            color: $main-color;
+            border: none;
+            border-bottom: 1px solid $main-color;
+            transition: all 0.3s;
+          }
+        }
+      }
+      /* Cards */
+      #cards {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        .card.hidden {
+          display: none;
+        }
+        .lazy-div {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .lazy-div.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        .card {
+          background-color: $main-background-color;
+          width: 10rem;
+          position: relative;
+          overflow: hidden;
+          border-radius: 10px;
+          border: 0px solid $shadow-color;
+          flex-direction: column;
+          align-items: center;
+  
+          .card-img-top {
+            // border-radius: 9px 9px 0 0;
+            border-radius: 9px;
+            height: 14rem;
+            width: 10rem;    
+          }
+          .lazy-img {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            filter: blur(10px);
+          }
+          .lazy-img.loaded {
+            opacity: 1;
+            filter: blur(0);
+          }
+          .offerBanner {
+            // display: none;
+            z-index: 1000;
+            // color: rgb(80, 78, 78);
+            color: white;
+            font-size: 0.8rem;
+            text-align: center;
+            font-weight: 700;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.644);
+            // background: url("assets/gold.jpg");
+            background-color: rgb(100, 9, 100);
+            background-size: cover;
+            height: 40px;
+            // transform: rotate(-45deg);
+            padding: 10px 0;
+            width: 60px;
+            border-radius: 50px;
+            position: absolute;
+            bottom: 90px;
+            left: 10px;
+          }
+          .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 5px;
+            .card-bodytext {
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              h4 {
+                font-size: 0.9rem;
+                font-weight: 700;
+                text-align: center;
+              }
+              p {
+                text-align: center;
+                color: rgb(190, 50, 50);
+              }
+              span{
+                text-decoration: line-through;
+               color: gray;
+               text-align: center;
+               display: block;
+  
+              }
+            }
+            .cartBtn {
+              display: inline-block;
+            }
+          }
+  
+          .cardBtns {
+            display: flex;
+            gap: 10px;
+            height: fit-content;
+            .heartBtn {
+              position: absolute;
+              top: 20px;
+              right: 15px;
+            }
+          }
+        }
+      }
+    }
+  }

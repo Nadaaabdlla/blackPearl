@@ -1,0 +1,128 @@
+/* =========================
+   Header
+========================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid $shadow-color;
+    box-shadow: 1px 1px 5px $shadow-color;
+    background-color: $main-background-color;
+  
+    img {
+      width: 15%;
+      height: 15%;
+    }
+  
+    #nav1 {
+      .navbar-toggler {
+        border: none;
+        padding: 0;
+      }
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+      .navbar-toggler-icon {
+        background-image: url("assets/bars-solid-full.svg");
+      }
+  
+      .search {
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 10px;
+        transition: all 0.1s;
+      }
+      .search:active {
+        border: none;
+        background-image: url("assets/gold.jpg");
+        background-size: cover;
+        color: $second-font-color;
+      }
+      .search_bar:active {
+        border: 2px solid $shadow-color;
+        box-shadow: none;
+      }
+      img {
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+      }
+    }
+  
+    #nav2 {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+  
+      #cartBtn {
+        position: relative;
+  
+        a {
+          color: $main-font-color;
+        }
+  
+        #cart-count {
+          position: absolute;
+          top: -12px;
+          right: -10px;
+          background-color: orangered;
+          color: $second-font-color;
+          border: 1px solid orangered;
+          border-radius: 50%;
+          text-align: center;
+          width: 20px;
+          height: 20px;
+          font-size: small;
+        }
+      }
+    }
+  }
+/* =========================
+   Footer
+========================= */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c2c2c;
+    height: max-content;
+    padding: 30px 10px;
+    color: $second-font-color;
+    img {
+      width: 150px;
+      height: 50x;
+      margin-bottom: 10px;
+    }
+    #Footernavbar {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      width: 100%;
+  
+      ul {
+        padding: 0;
+        display: flex;
+        gap: 8px;
+        li {
+          padding: 0 2px;
+          list-style: none;
+          img {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+          }
+          a {
+            color: $second-font-color;
+            text-decoration: none;
+            vertical-align: top;
+          }
+        }
+      }
+    }
+  }
+  

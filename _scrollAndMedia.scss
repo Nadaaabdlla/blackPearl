@@ -1,0 +1,28 @@
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #f3d009;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a78f0c;
+  }
+  
+  /* Responsive for small devices */
+  @media (max-width: 600px) {
+    #heroSection {
+      height: 50vh;
+    }
+    .hero-content h1 {
+      font-size: 1.4rem;
+    }
+    .hero-content h2 {
+      font-size: 1rem;
+    }
+  }

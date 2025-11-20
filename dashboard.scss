@@ -1,0 +1,20 @@
+@import "variables";
+@import "reset";
+@import "headerAndFooter";
+@import "scrollAndMedia";
+body{
+    h1{
+        text-align: center;
+        margin: 10px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    #dashboardForm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        height: auto;
+        min-height: 60vh;
+    }
+}

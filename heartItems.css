@@ -1,3 +1,212 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* =========================
+   Header
+========================= */
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  padding: 10px 15px;
+  border-bottom: 1px solid #c7c7c7;
+  -webkit-box-shadow: 1px 1px 5px #c7c7c7;
+          box-shadow: 1px 1px 5px #c7c7c7;
+  background-color: #faf0e6;
+}
+
+header img {
+  width: 15%;
+  height: 15%;
+}
+
+header #nav1 .navbar-toggler {
+  border: none;
+  padding: 0;
+}
+
+header #nav1 .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+header #nav1 .navbar-toggler-icon {
+  background-image: url("assets/bars-solid-full.svg");
+}
+
+header #nav1 .search {
+  border: 1px solid black;
+  border-radius: 10px;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+header #nav1 .search:active {
+  border: none;
+  background-image: url("assets/gold.jpg");
+  background-size: cover;
+  color: #ffffff;
+}
+
+header #nav1 .search_bar:active {
+  border: 2px solid #c7c7c7;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+header #nav1 img {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+header #nav2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #nav2 #cartBtn {
+  position: relative;
+}
+
+header #nav2 #cartBtn a {
+  color: #000000;
+}
+
+header #nav2 #cartBtn #cart-count {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  background-color: orangered;
+  color: #ffffff;
+  border: 1px solid orangered;
+  border-radius: 50%;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  font-size: small;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #2c2c2c;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 30px 10px;
+  color: #ffffff;
+}
+
+footer img {
+  width: 150px;
+  height: 50x;
+  margin-bottom: 10px;
+}
+
+footer #Footernavbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+footer #Footernavbar ul {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+footer #Footernavbar ul li {
+  padding: 0 2px;
+  list-style: none;
+}
+
+footer #Footernavbar ul li img {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+footer #Footernavbar ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  vertical-align: top;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f3d009;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a78f0c;
+}
+
+/* Responsive for small devices */
+@media (max-width: 600px) {
+  #heroSection {
+    height: 50vh;
+  }
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+  .hero-content h2 {
+    font-size: 1rem;
+  }
+}
+
 main {
   padding: 10px;
   display: -webkit-box;
@@ -12,6 +221,7 @@ main {
           align-items: center;
   height: auto;
   min-height: 60vh;
+  background-color: #faf0e6;
 }
 
 main ol {
@@ -37,6 +247,7 @@ main ol li {
 
 main ol li a {
   color: #530663;
+  text-decoration: none;
 }
 
 main #clear-cart {

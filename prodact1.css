@@ -1,6 +1,3 @@
-/* =========================
-   Global Styles
-========================= */
 * {
   padding: 0;
   margin: 0;
@@ -8,45 +5,9 @@
           box-sizing: border-box;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #f3d009;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a78f0c;
-}
-
-/* Responsive for small devices */
-@media (max-width: 600px) {
-  #heroSection {
-    height: 50vh;
-  }
-  .hero-content h1 {
-    font-size: 1.4rem;
-  }
-  .hero-content h2 {
-    font-size: 1rem;
-  }
-}
-
-body {
-  position: relative;
-}
-
 /* =========================
-     Header
-  ========================= */
+   Header
+========================= */
 header {
   position: -webkit-sticky;
   position: sticky;
@@ -142,6 +103,108 @@ header #nav2 #cartBtn #cart-count {
   width: 20px;
   height: 20px;
   font-size: small;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #2c2c2c;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 30px 10px;
+  color: #ffffff;
+}
+
+footer img {
+  width: 150px;
+  height: 50x;
+  margin-bottom: 10px;
+}
+
+footer #Footernavbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+footer #Footernavbar ul {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+footer #Footernavbar ul li {
+  padding: 0 2px;
+  list-style: none;
+}
+
+footer #Footernavbar ul li img {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+footer #Footernavbar ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  vertical-align: top;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f3d009;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a78f0c;
+}
+
+/* Responsive for small devices */
+@media (max-width: 600px) {
+  #heroSection {
+    height: 50vh;
+  }
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+  .hero-content h2 {
+    font-size: 1rem;
+  }
 }
 
 /* =========================
@@ -389,75 +452,5 @@ main #prodactDetailes #detailes #price .oldPrice {
   text-decoration: line-through;
   color: gray;
   display: inline-block;
-}
-
-/* =========================
-   Footer
-========================= */
-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #2c2c2c;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  padding: 30px 10px;
-  color: #ffffff;
-}
-
-footer img {
-  width: 150px;
-  height: 50x;
-  margin-bottom: 10px;
-}
-
-footer #Footernavbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-}
-
-footer #Footernavbar ul {
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 8px;
-}
-
-footer #Footernavbar ul li {
-  padding: 0 2px;
-  list-style: none;
-}
-
-footer #Footernavbar ul li img {
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-}
-
-footer #Footernavbar ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  vertical-align: top;
 }
 /*# sourceMappingURL=prodact1.css.map */

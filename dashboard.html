@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/icon_logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="heartItems.css">
+    <link rel="stylesheet" href="dashboard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
         </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <title>Your favorites</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <header>
-        <nav id="nav1" class="navbar" style="padding: 0;width: 71px;">
-            <div class="container-fluid" style="padding: 0;">
+        <nav id="nav1" class="navbar" style="padding: 0; width: 71px">
+            <div class="container-fluid" style="padding: 0">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -26,7 +25,9 @@
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Black Pearl</h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                            Black Pearl
+                        </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -43,27 +44,35 @@
                                     Contact us
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" target="_blank"
+                                    <li>
+                                        <a class="dropdown-item" target="_blank"
                                             href="https://www.facebook.com/profile.php?id=61573152634854">
                                             <i class="fa-brands fa-square-facebook"
-                                                style="padding: 0 5px 0 0;"></i>Facebook
-                                        </a></li>
-                                    <li><a class="dropdown-item" href="https://www.instagram.com/blackpearl_store04/">
-                                            <i class="fa-brands fa-square-instagram"
-                                                style="padding: 0 5px 0 0;"></i>Instagram
-                                        </a></li>
-                                    <li><a class="dropdown-item" href="https://wa.me/+2001022379431">
-                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i>
-                                            WhatsApp
-                                        </a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
+                                                style="padding: 0 5px 0 0"></i>Facebook
+                                        </a>
                                     </li>
-                                    <li><a class="dropdown-item"
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.instagram.com/blackpearl_store04/">
+                                            <i class="fa-brands fa-square-instagram"
+                                                style="padding: 0 5px 0 0"></i>Instagram
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://wa.me/+2001022379431">
+                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0"></i>
+                                            WhatsApp
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
                                             href="https://chat.whatsapp.com/DlyfycFpjj0BAe9UJ2607s">
-                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0;"></i> Our
-                                            WhatsApp group
-                                        </a></li>
+                                            <i class="fa-brands fa-square-whatsapp" style="padding: 0 5px 0 0"></i>
+                                            Our WhatsApp group
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -76,7 +85,7 @@
                 </div>
             </div>
         </nav>
-        <img src="assets/icon_logo.png" alt="">
+        <img src="assets/icon_logo.png" alt="" />
         <nav id="nav2">
             <li id="cartBtn">
                 <a href="cartItems.html"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
@@ -84,55 +93,60 @@
             </li>
             <a href="heartItems.html">
                 <li class="mainHeartBtn">
-                    <i class="fa-solid fa-heart fa-xl" style="color: rgb(83, 6, 99);"></i>
+                    <i class="fa-regular fa-heart fa-xl" style="color: black"></i>
                 </li>
             </a>
         </nav>
     </header>
-    <main>
-        <h1>Your favorites</h1>
-        <ol id="cart-list"></ol>
-        <button id="clear-cart">Clear</button>
-    </main>
+    <h1>Welcome Ayat!</h1>
+    <form action="" id="dashboardForm">
+        <label for=""></label>
+        <input type="text" name="" id="">
+        <label for=""></label>
+        <input type="text" name="" id="">
+        <label for=""></label>
+        <input type="text" name="" id="">
+        <label for=""></label>
+        <input type="text" name="" id="">
+        <label for=""></label>
+        <input type="text" name="" id="">
+    </form>
     <footer id="footer">
         <img src="assets/logoText.png" alt="logo">
-        <p style="text-align: center;">This website offers different high quality handmade accessories to match your
-            vibe</p>
-        <div id="Footernavbar">
-            <!-- <nav>
+        <p style="text-align: center;">This website offers different high quality handmade accessories to match your vibe</p>
+    <div id="Footernavbar">
+        <!-- <nav>
             <ul>
                 <li><a href="#heroSection">Home</a></li>
                  <li><a href="#footer">About</a></li> 
                 <li><a href="#categoryContainer">categories</a></li>
             </ul>
         </nav> -->
-            <nav style="justify-content: center;">
-                <ul>
-                    <li>
-                        <img src="assets/facebook.png" alt="">
-                        <a target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
-                            Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <img src="assets/instagram.png" alt="">
-                        <a href="https://www.instagram.com/blackpearl_store04/">
-                            Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <img src="assets/whatsapp.png" alt="">
-                        <a href="https://wa.me/+2001022379431">
-                            WhatsApp
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <p>&copy;All copyrights reseved to Black Pearl</p>
-        <p> Made by Nada Tarek</p>
-    </footer>
-    <script src="heartItems.js"></script>
+        <nav style="justify-content: center;">
+            <ul>
+                <li>
+                    <img src="assets/facebook.png" alt="">
+                    <a target="_blank" href="https://www.facebook.com/profile.php?id=61573152634854">
+                        Facebook
+                    </a>
+                </li>
+                <li>
+                    <img src="assets/instagram.png" alt="">
+                    <a href="https://www.instagram.com/blackpearl_store04/">
+                        Instagram
+                    </a>
+                </li>
+                <li>
+                    <img src="assets/whatsapp.png" alt="">
+                    <a href="https://wa.me/+2001022379431">
+                        WhatsApp
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <p>&copy;All copyrights reseved to Black Pearl</p>
+    <p> Made by Nada Tarek</p>
+</footer>
 </body>
-
 </html>

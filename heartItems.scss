@@ -1,3 +1,7 @@
+@import "variables";
+@import "reset";
+@import "headerAndFooter";
+@import "scrollAndMedia";
 main {
     padding: 10px;
     display: flex;
@@ -5,7 +9,7 @@ main {
     align-items: center;
     height: auto;
     min-height: 60vh;
-
+    background-color: $main-background-color;
     ol {
         border: 1px solid rgb(0, 0, 0);
         border-radius: 10px;
@@ -20,6 +24,7 @@ main {
 
             a {
                 color: rgb(83, 6, 99);
+                text-decoration: none;
             }
         }
     }
