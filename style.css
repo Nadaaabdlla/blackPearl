@@ -138,9 +138,9 @@ header #nav2 #cartBtn #cart-count {
   position: absolute;
   top: -12px;
   right: -10px;
-  background-color: #900eaa;
+  background-color: orangered;
   color: #ffffff;
-  border: 1px solid #900eaa;
+  border: 1px solid orangered;
   border-radius: 50%;
   text-align: center;
   width: 20px;
@@ -154,6 +154,8 @@ header #nav2 #cartBtn #cart-count {
 main {
   padding-bottom: 20px;
   background-color: #faf0e6;
+  height: auto;
+  min-height: 60vh;
   /* Hero Slider */
   /* Categories Section */
 }

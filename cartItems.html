@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="assets/icon_logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cartItems.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -14,80 +15,6 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <title>Your Cart</title>
-    <style>
-        .fa-cart-shopping{
-            color: rgb(83, 6, 99);
-        }
-        h1 {
-            text-align: center;
-        }
-
-        #cart-list {
-            width: 100%;
-            padding: 0px;
-        }
-
-        #cart-list li {
-            list-style: none;
-            border: 1px solid rgb(0, 0, 0);
-            margin: 10px 0;
-            padding: 15px 10px;
-            border-radius: 10px;
-            width: 100%;
-        }
-
-        #cart-list li a {
-            color: rgb(83, 6, 99);
-        }
-
-        main {
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* height: 100vh; */
-        }
-
-        #btns {
-            display: flex;
-            gap: 10px;
-            width: 90%;
-        }
-
-        #clear-cart {
-            border: 1px solid rgb(0, 0, 0);
-            background-color: white;
-        }
-
-        #sendWhatsapp {
-            border: 1px solid rgba(0, 0, 0, 0);
-        }
-
-        #clear-cart,
-        #sendWhatsapp {
-            border-radius: 10px;
-            transition: all 0.1s;
-            padding: 10px;
-            width: 50%;
-        }
-
-        #sendWhatsapp {
-            background-color: rgb(94, 163, 55);
-            color: white;
-        }
-
-        #sendWhatsapp:active {
-            background-color: rgb(39, 82, 14);
-            color: white;
-            border-color: rgb(39, 82, 14);
-        }
-
-        #clear-cart:active {
-            background-color: red;
-            color: white;
-            border-color: red;
-        }
-    </style>
 </head>
 
 <body>
@@ -220,105 +147,7 @@
         <p>&copy;All copyrights reseved to Black Pearl</p>
         <p> Made by Nada Tarek</p>
     </footer>
-    <script>
-        // Retrieve products
-        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-        const cartList = document.getElementById("cart-list");
-        const clearBtn = document.getElementById("clear-cart");
-
-        // Display products in the list
-        if (cartItems.length === 0) {
-            cartList.innerHTML = `
-        <li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">
-          Empty
-        </li>`;
-        } else {
-            cartItems.forEach((item) => {
-                function pieces(num) {
-                    num = item.qty;
-                    return num == 1 ? "piece" : "pieces";
-                }
-                let li = document.createElement("li");
-                li.innerHTML = `
-             <a href="${item.link}" class="product-link">
-             <strong>${item.name}</strong>
-             </a>
-             <span> - ${item.price} EGP</span>
-             <span> - ${item.qty} ${pieces()}</span>
-           `;
-
-                cartList.appendChild(li);
-            });
-        }
-
-        // Button to clear the entire cart
-        clearBtn.addEventListener("click", () => {
-            localStorage.removeItem("cartItems"); // Remove from localStorage
-            cartItems = []; // Clear the in-memory copy
-            cartList.innerHTML = `<li style="list-style: none; padding: 50px; font-size: xx-large; font-weight: 900; text-align: center;">Empty</li>`;
-            // alert("Cart cleared!");
-            updateCartCount();
-        });
-
-        // Send cart items via WhatsApp
-        document.getElementById("sendWhatsapp").addEventListener("click", () => {
-            if (cartItems.length === 0) {
-                alert("Cart is empty!");
-                return;
-            }
-
-            // Format the message
-            let message = "Shopping List:\n";
-            let totalPrice = 0;
-
-            cartItems.forEach((item, index) => {
-                let itemTotal = item.price * item.qty; // total for each product
-                totalPrice += itemTotal;
-
-                message += `${index + 1}- *${item.name}* (${item.price} EGP × ${item.qty}) = ${itemTotal} EGP\n`;
-            });
-
-            message += `\n*Total Price*: ${totalPrice} EGP`; // add total at the end
-
-            // WhatsApp number
-            let phoneNumber = "2001022379431";
-
-            // WhatsApp link
-            let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-
-            // Open WhatsApp
-            window.open(url, "_blank");
-        });
-        // Counter update
-        function updateCartCount() {
-            let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-            function cartCounter(cart) {
-                let totalQty = 0;
-                cart.forEach((item) => {
-                    let piecesNum = Number(item.qty);
-                    totalQty += piecesNum;
-                    return totalQty;
-                });
-                return Number(totalQty);
-            }
-            let cartCount = document.querySelector("#cart-count");
-            cartCount.textContent = Number(cartCounter(cart));
-            if (cartCount.textContent >= 100) {
-                cartCount.style.width = "max-content";
-                cartCount.style.height = "max-content";
-                cartCount.style.padding = "1px";
-            } else {
-                cartCount.style.width = "20px";
-                cartCount.style.height = "20px";
-                cartCount.style.padding = "0px";
-            };
-
-        }
-        // run update once when loading
-        updateCartCount();
-
-    </script>
+    <script src="cartItems.js"></script>
 </body>
 
 </html>

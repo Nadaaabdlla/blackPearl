@@ -119,9 +119,9 @@ header {
         position: absolute;
         top: -12px;
         right: -10px;
-        background-color: rgb(144, 14, 170);
+        background-color: orangered;
         color: $second-font-color;
-        border: 1px solid rgb(144, 14, 170);
+        border: 1px solid orangered;
         border-radius: 50%;
         text-align: center;
         width: 20px;
@@ -138,6 +138,8 @@ header {
 main {
   padding-bottom: 20px;
   background-color: $main-background-color;
+  height: auto;
+  min-height: 60vh;
   a{
     text-decoration: none;
   }

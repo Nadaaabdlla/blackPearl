@@ -1,0 +1,59 @@
+main {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  min-height: 60vh;
+}
+
+main ol {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 0 10px 25px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main ol li {
+  list-style: circle;
+}
+
+main ol li a {
+  color: #530663;
+}
+
+main #clear-cart {
+  border: 1px solid black;
+  border-radius: 10px;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  padding: 10px 30px;
+  background-color: #fc3535;
+  color: white;
+  border-color: red;
+  margin: 10px;
+}
+
+main #clear-cart:active {
+  background-color: #960a0a;
+  color: white;
+  border-color: #960a0a;
+}
+/*# sourceMappingURL=heartItems.css.map */
