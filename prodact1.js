@@ -189,11 +189,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const productName = document.querySelector("h4.card-text").textContent;
     const productPrice = document.querySelector(".newPrice").textContent.replace("Price: ", "").replace(" EGP", "");
 
-    // ================= CART =================
+    // ================= ADD TO CART =================
+    function showToast(message) {
+        const toast = document.getElementById("toast");
+        toast.innerText = message;
+        toast.classList.add("show");
+        toast.style.backgroundColor="#3b214d";
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 3000); // 3 seconds
+    }
+    function showAlert(message) {
+        const toast = document.getElementById("toast");
+        toast.innerText = message;
+        toast.classList.add("show");
+        toast.style.backgroundColor="#db2d2d";
+        
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 3000); // 3 seconds
+    }
     addToCartBtn.addEventListener("click", () => {
+        showToast("Product added to your cart, you can view it now!");
         const quantity = parseInt(qtyInput.value);
         if (quantity == 0) {
-            alert("You can't add nothing to the cart");
+            // alert("You can't add nothing to the cart");
+            showAlert("You can't add nothing to the cart");
         } else {
             let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
             cart.push({
@@ -248,8 +269,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             localStorage.setItem("wishlistItems", JSON.stringify(wishlist));
            // alert("Product added to wishlist ❤️");
+           showToast("Product added to wishlist, you can view it now!");
         } else {
-            alert("This product is already in your wishlist!");
+            // alert("This product is already in your wishlist!");
+            showAlert("This product is already in your wishlist!");
+
         }
 
     });
